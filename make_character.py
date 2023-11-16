@@ -3,6 +3,8 @@ from choose_class import choose_class
 """
 Tatsunori Marumo
 A01327744
+Ephraim Hsu
+A01366848
 """
 
 
