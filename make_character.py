@@ -10,7 +10,8 @@ def create_character():
     user_name = input("enter your name")
     user_class = choose_class()
     if user_class == "front_end_developer":
-        character = {"name": user_name, "class": user_class, "level": 1, "status": {}, "coordinates": [0, 0],
+        character = {"name": user_name, "class": user_class, "level": 1, "status": {"max_hp": 0, "current_hp": 0,
+                     "intelligence": 0, "luck": 0, "typing_speed": 0, "mentality": 0}, "coordinates": [0, 0],
                      "inventory": []}
     elif user_class == "back_end_developer":
         character = {"name": user_name, "class": user_class, "level": 1, "status": {}, "coordinates": [0, 0],
