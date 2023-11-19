@@ -14,18 +14,28 @@ def choose_class():
 
     postcondition: no invalid input is accepted
     :return: the chosen user class stored as string
+    :raises ValueError: if user input is not string 1, 2 ,or 3
     """
 
     while True:
-        user_class = input("choose a class\n1: front-end developer\n2: back-end developer\n3: full-stack developer\n")
+        user_class = (input("choose a class\n1: front-end developer\n2: back-end developer\n3: full-stack developer\n")
+                      .strip())
         try:
             if user_class not in ["1", "2", "3"]:
-                raise ValueError
+                raise ValueError("Invalid input. Please choose a valid class number")
             if user_class == "1":
                 return "front_end_developer"
             elif user_class == "2":
                 return "back_end_developer"
             elif user_class == "3":
                 return "full_stack_developer"
-        except ValueError:
-            print("Invalid input. Please choose a valid class number")
+        except ValueError as error:
+            print(error)
+
+
+def main():
+    choose_class()
+
+
+if __name__ == '__main__':
+    main()
