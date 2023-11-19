@@ -18,9 +18,9 @@ def choose_class():
 
     while True:
         user_class = input("choose a class\n1: front-end developer\n2: back-end developer\n3: full-stack developer\n")
-        if user_class not in ["1", "2", "3"]:
-            raise ValueError
         try:
+            if user_class not in ["1", "2", "3"]:
+                raise ValueError
             if user_class == "1":
                 return "front_end_developer"
             elif user_class == "2":
@@ -29,6 +29,3 @@ def choose_class():
                 return "full_stack_developer"
         except ValueError:
             print("Invalid input. Please choose a valid class number")
-
-
-choose_class()
