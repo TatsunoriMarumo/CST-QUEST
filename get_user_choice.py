@@ -15,22 +15,20 @@ def get_user_choice():
     :raises ValueError: if user input is not suggested direction
     """
 
+    movements = {"1": "north", "2": "east", "3": "south", "4": "west",
+                 "n": "north", "e": "east", "s": "south", "w": "west",
+                 "north": "north", "east": "east", "south": "south", "west": "west"}
+
     while True:
-        movements = ["north", "east", "south", "west", "1", "2", "3", "4"]
         user_choice = input("Where do you wish to go?\n1: North\n2: East\n3: South\n4: West\n").strip().lower()
         try:
-            if user_choice not in movements:
-                raise ValueError("Invalid input\nTry again")
-            elif user_choice.isdigit():
-                return movements[int(user_choice) - 1]
-            else:
-                return user_choice
-        except ValueError as error:
-            print(error)
+            return movements[user_choice]
+        except KeyError:
+            print("Invalid input\nTry again")
 
 
 def main():
-    get_user_choice()
+    print(get_user_choice())
 
 
 if __name__ == '__main__':
