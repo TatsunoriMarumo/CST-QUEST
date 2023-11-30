@@ -1,6 +1,8 @@
 """
 Tatsunori Marumo
 A01327744
+Ephraim Hsu
+A01366848
 """
 
 
@@ -14,8 +16,19 @@ def use_quiz_week_1():
             return user_answer == "1"
 
 
+def use_quiz_week_2():
+    while True:
+        user_answer = input("The flowchart symbol for making a choice is:\n"
+                            "1: A sheared parallelogram\n2: A diamond\n3: A pill-shaped oval\n4: A rectangle")
+        if user_answer not in ["1", "2", "3", "4"]:
+            raise ValueError("Please answer with number between 1 to 4")
+        else:
+            return user_answer == "2"
+
+
+
 def main():
-    ask_quiz_week_1()
+    use_quiz_week_1()
 
 
 if __name__ == '__main__':
