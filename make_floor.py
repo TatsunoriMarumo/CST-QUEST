@@ -13,7 +13,7 @@ def make_board():
     """
 
     game_board = {(row, column): random.choice(range(5)) for row in range(11) for column in range(11)}
-    print(game_board)
+    return game_board
 
 
 def main():
