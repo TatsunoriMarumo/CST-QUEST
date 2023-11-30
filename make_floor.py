@@ -12,7 +12,7 @@ def make_board():
     Create a virtual game board.
     """
 
-    game_board = {(row, column): random.choice(range(5)) for row in range(11) for column in range(11)}
+    game_board = {(row, column): random.choice(range(5)) for row in range(13) for column in range(13)}
     return game_board
 
 
