@@ -62,6 +62,7 @@ def use_quiz_week_six():
     else:
         return user_answer == "1"
 
+
 def use_quiz_weak_seven():
     user_answer = input("What does short-circuiting mean in the context of logical operations in Python?"
                         "1: The second operand is not evaluated if the first operand is sufficient to determine the result"
@@ -74,6 +75,16 @@ def use_quiz_weak_seven():
         return user_answer == "1"
 
 
+def use_quiz_weak_eight():
+    user_answer = input("What is the purpose of the os.remove() function in Python?"
+                        "1: To remove a specified directory."
+                        "2: To remove a variable from memory."
+                        "3: To delete the specified file."
+                        "4: To uninstall a Python package")
+    if user_answer not in ["1", "2", "3", "4"]:
+        raise ValueError("Please answer with number between 1 and 4")
+    else:
+        return user_answer == "3"
 
 
 def use_bonus_quiz():
@@ -85,16 +96,6 @@ def use_bonus_quiz():
     else:
         pass
         # die()
-
-
-
-
-
-
-
-
-
-
 
 
 def main():
