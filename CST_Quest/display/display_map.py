@@ -4,8 +4,7 @@ A01327744
 Ephraim Hsu
 A01366848
 """
-import make_floor
-import make_character
+from CST_Quest.creation import make_character, make_floor
 
 
 def display_board(game_board, character):

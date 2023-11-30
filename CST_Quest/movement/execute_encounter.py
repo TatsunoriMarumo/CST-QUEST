@@ -4,7 +4,6 @@ A01327744
 Ephraim Hsu
 A01366848
 """
-from create_enemy import create_burnaby_student
 
 
 def execute_encounter(encounter_type):

@@ -4,7 +4,7 @@ A01327744
 Ephraim Hsu
 A01366848
 """
-from choose_class import choose_class
+from CST_Quest.creation.choose_class import choose_class
 
 
 def create_character(user_name):
