@@ -62,7 +62,17 @@ def use_quiz_week_six():
     else:
         return user_answer == "1"
 
-    def use_quiz_weak_seven():
+def use_quiz_weak_seven():
+    user_answer = input("What does short-circuiting mean in the context of logical operations in Python?"
+                        "1: The second operand is not evaluated if the first operand is sufficient to determine the result"
+                        "2: The logical operation is bypassed entirely"
+                        "3: The code execution stops due to an error"
+                        "4: The operation takes a shortcut to return a default value")
+    if user_answer not in ["1", "2", "3", "4"]:
+        raise ValueError("Please answer with number between 1 and 4")
+    else:
+        return user_answer == "1"
+
 
 
 
@@ -73,6 +83,7 @@ def use_bonus_quiz():
     elif user_answer == "1":
         return True
     else:
+        pass
         # die()
 
 
