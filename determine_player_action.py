@@ -20,6 +20,3 @@ def determine_player_action():
             return possible_player_actions[player_action]
         except KeyError:
             print("\nNot a valid action, please use integers 1 to 4, inclusive, to perform an action.")
-
-
-print(determine_player_action())
