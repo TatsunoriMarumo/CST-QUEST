@@ -40,3 +40,10 @@ def heal_character_with_block(character):
     character[f"status"][f"current_hp"] += 2
 
 
+def decrement_buff_count(character_instance):
+    possible_buffs = {character_instance["status"].fromkeys("intelligence", "luck", "typing_speed", "mentality")}
+    for status in possible_buffs:
+        if character_instance[f"{status}"][f"count"] == 0:
+            continue
+        else:
+            character_instance[f"{status}"][f"count"] -= 1
