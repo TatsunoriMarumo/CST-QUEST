@@ -7,7 +7,7 @@ A01366848
 import random
 
 
-def calculate_attack_vs_defense(attacking, attack_type, defending):
+def calculate_hp_loss(attacking, attack_type, defending):
     attack_stat = attacking["stats"]["intelligence"]
     block_stat = defending["stats"]["intelligence"]
     if attack_type == "heavy_attack":
@@ -26,5 +26,13 @@ def calculate_attack_vs_defense(attacking, attack_type, defending):
 
 def buff_character(character, item):
     character_instance = character.deepcopy()
-    character_instance[f"status"][f"{item['buff']}"] += item["value"]
+    character_instance[f"status"][f"{item['buff']}"] += item[f"value"]
     return character_instance
+
+
+def heal_character_with_item(character, item):
+    character[f"status"][f"{item['heal']}"] += item[f"value"]
+
+
+def heal_character_with_block(character):
+    character[f"status"][f"current_hp"] += 2
