@@ -41,6 +41,7 @@ def choose_class():
         except ValueError as e:
             print("{}".format(str(e)), file=sys.stderr)
 
+
 def assign_character_starting_stats(character, user_class):
     if user_class == "front_end_developer":
         character["status"] = {"max_hp": 10, "current_hp": 10,
