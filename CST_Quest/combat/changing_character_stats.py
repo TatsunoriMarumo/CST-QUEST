@@ -22,3 +22,9 @@ def calculate_attack_vs_defense(attacking, attack_type, defending):
             defending["stats"]["current_hp"] -= true_damage
         else:
             print("Attack was blocked!")
+
+
+def buff_character(character, item):
+    character_instance = character.deepcopy()
+    character_instance[f"status"][f"{item['buff']}"] += item["value"]
+    return character_instance
