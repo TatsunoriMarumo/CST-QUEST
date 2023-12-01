@@ -26,8 +26,10 @@ def calculate_hp_loss(attacking, attack_type, defending):
 
 def buff_character(character, item):
     character_instance = character.deepcopy()
-    character_instance[f"status"][f"{item['buff']}"] += item[f"value"]
-    return character_instance
+    for item in item:
+        character_instance[f"status"][f"{item['buff']['value']}"] += item[f"value"]
+        character_instance[f"status"][f"{item['buff']['count']}"] += item[f"count"]
+        return character_instance
 
 
 def heal_character_with_item(character, item):
@@ -36,3 +38,5 @@ def heal_character_with_item(character, item):
 
 def heal_character_with_block(character):
     character[f"status"][f"current_hp"] += 2
+
+

@@ -45,13 +45,22 @@ def choose_class():
 def assign_character_starting_stats(character, user_class):
     if user_class == "front_end_developer":
         character["status"] = {"max_hp": 10, "current_hp": 10,
-                               "intelligence": 5, "luck": 5, "typing_speed": 10, "mentality": 5}
+                               "intelligence": {"value": 5, "count": 0},
+                               "luck": {"value": 5, "count": 0},
+                               "typing_speed": {"value": 10, "count": 0},
+                               "mentality": {"value": 5, "count": 0}}
     elif user_class == "back_end_developer":
         character["status"] = {"max_hp": 10, "current_hp": 10,
-                               "intelligence": 10, "luck": 5, "typing_speed": 5, "mentality": 5}
+                               "intelligence": {"value": 10, "count": 0},
+                               "luck": {"value": 5, "count": 0},
+                               "typing_speed": {"value": 5, "count": 0},
+                               "mentality": {"value": 5, "count": 0}}
     else:
         character["status"] = {"max_hp": 10, "current_hp": 10,
-                               "intelligence": 7, "luck": 7, "typing_speed": 7, "mentality": 7}
+                               "intelligence": {"value": 7, "count": 0},
+                               "luck": {"value": 7, "count": 0},
+                               "typing_speed": {"value": 7, "count": 0},
+                               "mentality": {"value": 7, "count": 0}}
     return character
 
 
@@ -63,7 +72,7 @@ def create_character():
             print("{}".format(str(e)), file=sys.stderr)
         else:
             user_class = choose_class()
-            character = {"name": user_name, "class": user_class, "level": 1, "exp": 0, "stats": None, "coordinates": [0, 0],
+            character = {"name": user_name, "class": user_class, "level": 1, "exp": 0, "status": None, "coordinates": [0, 0],
                          "inventory": []}
 
             assign_character_starting_stats(character, user_class)
