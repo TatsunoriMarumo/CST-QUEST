@@ -1,26 +1,31 @@
 """
 Tatsunori Marumo
 A01327744
+Ephraim Hsu
+A01366848
 """
 
-import tkinter
-from tkinter import Pack, filedialog, Text
-import os
-import pathlib
+import pygame
+from pygame.locals import *
 
-root = tkinter.Tk()
-root.title("CST QUEST")
-canvas = tkinter.Canvas(width=500, height=500, bg="#123456")
-canvas.pack()
+pygame.init()
 
+screen_width = 850
+screen_height = int(screen_width * 0.8)
 
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("CST QUEST")
 
-root.mainloop()
+bg_image = pygame.image.load("")
 
+running = True
+while running:
 
-def main():
-    pass
+    screen.blit()
 
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        pygame.display.update()
+pygame.quit()
 
-if __name__ == '__main__':
-    main()
