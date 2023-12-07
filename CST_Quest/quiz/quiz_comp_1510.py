@@ -89,6 +89,30 @@ def use_quiz_week_eight():
         return user_answer == "3"
 
 
+def use_quiz_week_nine():
+    user_answer = input("What is a characteristic of recursive functions in Python\n"
+                        "1: They cannot have more than one base case\n"
+                        "2: They are functions that call themselves\n"
+                        "3: They require an additional module to be imported\n"
+                        "4: They always execute faster than equivalent iterative solutions\n")
+    if user_answer not in ["1", "2", "3", "4"]:
+        raise ValueError("Please answer with number between 1 and 4")
+    else:
+        return user_answer == "2"
+
+
+def use_quiz_week_ten():
+    user_answer = input("What is a closure in Python?\n"
+                        "1: A feature that closes a file after its execution\n"
+                        "2: A function that remembers the environment in which it was created\n"
+                        "3: A function returned by another function\n"
+                        "4: An error that occurs when a function is not closed properly\n")
+    if user_answer not in ["1", "2", "3", "4"]:
+        raise ValueError("Please answer with number between 1 and 4")
+    else:
+        return user_answer == "2"
+
+
 def use_bonus_quiz():
     user_answer = input("Bonus question!!\nChris is a good teacher\n1: True\n2: False\n")
     if user_answer not in ["1", "2"]:
@@ -102,7 +126,7 @@ def use_bonus_quiz():
 
 def pick_quiz():
     quiz_list = [use_quiz_week_one, use_quiz_week_two, use_quiz_week_three, use_quiz_week_four, use_quiz_week_five,
-                 use_quiz_week_six, use_quiz_week_seven, use_quiz_week_eight]
+                 use_quiz_week_six, use_quiz_week_seven, use_quiz_week_eight, use_quiz_week_nine, use_quiz_week_ten]
 
     copy_quiz_list = quiz_list.copy()
 
