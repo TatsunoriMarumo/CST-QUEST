@@ -9,8 +9,11 @@ import sys
 
 def get_username():
     """
+    Ask player for their username.
 
-    :return:
+    :postcondition: assign variable to player's selected username
+    :return: a string
+    :raises ValueError: if the user input only contains white space
     """
     user_name = input("Please enter your name:\n")
     if not user_name:
