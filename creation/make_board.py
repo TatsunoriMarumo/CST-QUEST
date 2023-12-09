@@ -15,7 +15,7 @@ def make_board():
     :return: a dictionary that represents a virtual game board
     """
 
-    game_board = {(row, column): 0 for row in range(11) for column in range(11)}
+    game_board = {(row, column): random.randint(0, 4) for row in range(11) for column in range(11)}
     return game_board
 
 
