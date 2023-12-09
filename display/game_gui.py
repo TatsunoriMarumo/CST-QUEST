@@ -6,7 +6,7 @@ A01366848
 """
 
 import pygame
-from creation import make_character
+from creation import character_creation
 character = make_character.create_character()
 
 pygame.init()

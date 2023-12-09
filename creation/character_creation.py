@@ -8,9 +8,13 @@ import sys
 
 
 def get_username():
-    user_name = input("enter your name:\n")
+    """
+
+    :return:
+    """
+    user_name = input("Please enter your name:\n")
     if not user_name:
-        raise ValueError("username cannot be blank")
+        raise ValueError("Username must contain characters other than white space.")
     else:
         return user_name
 
@@ -81,7 +85,7 @@ def create_character():
 
 
 def main():
-    print(create_character())
+    get_username()
 
 
 if __name__ == '__main__':

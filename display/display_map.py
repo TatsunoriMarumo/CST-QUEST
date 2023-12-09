@@ -4,7 +4,7 @@ A01327744
 Ephraim Hsu
 A01366848
 """
-from creation import make_character
+from creation import character_creation
 from creation import make_floor
 
 
