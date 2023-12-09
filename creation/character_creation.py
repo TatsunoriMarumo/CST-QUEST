@@ -117,7 +117,7 @@ def create_character():
     user_name = get_username()
     user_class = get_class()
     character = {"name": user_name, "class": user_class, "job": "struggling student", "level": 1, "exp": 0,
-                 "status": None, "coordinates": [0, 0], "inventory": [], "skills": ["control C and V"]}
+                 "status": None, "coordinates": [0, 0], "inventory": [], "skills": {"1": "control C and V"}}
 
     assign_character_starting_stats(character, user_class)
     return character
