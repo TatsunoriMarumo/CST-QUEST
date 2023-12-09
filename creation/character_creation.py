@@ -53,11 +53,35 @@ def assign_character_starting_stats(character, character_class):
 
     :param character: is a dictionary
     :param character_class: is a string
-    :precondition character: must be a dictionary containing key-value pair of 'status' and a dictionary representing
+    :precondition character: must be a dictionary containing a key-value pair of 'status' and a dictionary representing
                              the character's stats
     :precondition user_class: must be a string representing the player's selected class
     :post condition: change a character's stats to specific default starting values based on class
     :return: a dictionary representing the player's character
+    >>> a_class = "front_end_developer"
+    >>> a_character = {}
+    >>> assign_character_starting_stats(a_character, a_class) # doctest: +NORMALIZE_WHITESPACE
+    {'status': {'max_hp': 10, 'current_hp': 10,
+                'intelligence': {'value': 5, 'turn_count': 0},
+                'mental_fortitude': {'value': 5, 'turn_count': 0},
+                'typing_speed': {'value': 10, 'turn_count': 0},
+                'luck': {'value': 5, 'turn_count': 0}}}
+    >>> a_class = "back_end_developer"
+    >>> a_character = {}
+    >>> assign_character_starting_stats(a_character, a_class) # doctest: +NORMALIZE_WHITESPACE
+    {'status': {'max_hp': 10, 'current_hp': 10,
+                'intelligence': {'value': 10, 'turn_count': 0},
+                'mental_fortitude': {'value': 5, 'turn_count': 0},
+                'typing_speed': {'value': 5, 'turn_count': 0},
+                'luck': {'value': 5, 'turn_count': 0}}}
+    >>> a_class = "full_stack_developer"
+    >>> a_character = {}
+    >>> assign_character_starting_stats(a_character, a_class) # doctest: +NORMALIZE_WHITESPACE
+    {'status': {'max_hp': 10, 'current_hp': 10,
+                'intelligence': {'value': 7, 'turn_count': 0},
+                'mental_fortitude': {'value': 7, 'turn_count': 0},
+                'typing_speed': {'value': 7, 'turn_count': 0},
+                'luck': {'value': 7, 'turn_count': 0}}}
     """
     if character_class == "front_end_developer":
         character["status"] = {"max_hp": 10, "current_hp": 10,
