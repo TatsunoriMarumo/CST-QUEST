@@ -56,7 +56,7 @@ def assign_character_starting_stats(character, character_class):
     :precondition character: must be a dictionary containing a key-value pair of 'status' and a dictionary representing
                              the character's stats
     :precondition user_class: must be a string representing the player's selected class
-    :post condition: change a character's stats to specific default starting values based on class
+    :postcondition: change a character's stats to specific default starting values based on class
     :return: a dictionary representing the player's character
     >>> a_class = "front_end_developer"
     >>> a_character = {}
