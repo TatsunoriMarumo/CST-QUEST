@@ -16,10 +16,10 @@ def get_username():
     :raises ValueError: if the user input only contains white space
     """
     user_name = input("Please enter your name:\n")
-    if not user_name:
+    if not user_name.strip():
         raise ValueError("Username must contain characters other than white space.")
     else:
-        return user_name
+        return user_name.strip()
 
 
 def choose_class():
