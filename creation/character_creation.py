@@ -28,7 +28,7 @@ def get_class():
 
     :precondition: player has chosen a username
     :postcondition: assign variable to player's selected class
-    :return: a string representing the player's selecetd class
+    :return: a string representing the player's selected class
     :raises ValueError: if the user input is not 1, 2, or 3
     """
     while True:
