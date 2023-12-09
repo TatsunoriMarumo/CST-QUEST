@@ -65,7 +65,7 @@ def assign_character_starting_stats(character, character_class):
                 'intelligence': {'value': 5, 'turn_count': 0},
                 'mental_fortitude': {'value': 5, 'turn_count': 0},
                 'typing_speed': {'value': 10, 'turn_count': 0},
-                'luck': {'value': 5, 'turn_count': 0}}}
+                'luck': {'value': 5, 'turn_count': 0}}}s
     >>> a_class = "back_end_developer"
     >>> a_character = {}
     >>> assign_character_starting_stats(a_character, a_class) # doctest: +NORMALIZE_WHITESPACE
@@ -117,8 +117,7 @@ def create_character():
     user_name = get_username()
     user_class = get_class()
     character = {"name": user_name, "class": user_class, "job": "struggling student", "level": 1, "exp": 0,
-                 "status": None, "coordinates": [0, 0],
-                 "inventory": []}
+                 "status": None, "coordinates": [0, 0], "inventory": [], "skills": []}
 
     assign_character_starting_stats(character, user_class)
     return character

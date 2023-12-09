@@ -33,6 +33,50 @@ def change_job(character):
     return
 
 
+def add_skill(character: dict):
+    character_level = character["level"]
+    character_class = character["class"]
+    if character_level == 2:
+        if character_class == "front_end_developer":
+            character["skills"].append("console.log")
+        elif character_class == "back_end_developer":
+            character["skills"].append('print("Hello World")')
+        else:
+            character["skills"].append('print("Hello World")')
+
+    elif character_level == 3:
+        if character_class == "front_end_developer":
+            character["skills"].append("margin: auto")
+        elif character_class == "back_end_developer":
+            character["skills"].append("spread like bacteria")
+        else:
+            character["skills"].append('status(200)')
+
+    elif character_level == 4:
+        if character_class == "front_end_developer":
+            character["skills"].append("display: flex")
+        elif character_class == "back_end_developer":
+            character["skills"].append("roll a die")
+        else:
+            character["skills"].append("try except")
+
+    elif character_level == 5:
+        if character_class == "front_end_developer":
+            character["skills"].append("addEventListener")
+        elif character_class == "back_end_developer":
+            character["skills"].append("try except")
+        else:
+            character["skills"].append("git stash")
+
+    elif character_level == 6:
+        if character_class == "front_end_developer":
+            character["skills"].append("github copilot")
+        elif character_class == "back-end-developer":
+            character["skills"].append("give a chocolate")
+        else:
+            character["skills"].append("implement API")
+
+
 def main():
     pass
 
