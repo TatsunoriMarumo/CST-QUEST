@@ -7,21 +7,26 @@ A01366848
 import random
 
 
-def calculate_hp_loss(attacking, attack_type, defending):
+def calculate_damage(attacking, attack_type, defending):
     attack_stat = attacking["stats"]["intelligence"]
     block_stat = defending["stats"]["mentality"]
     if attack_type == "heavy_attack":
-        true_damage = random.choice(range(attack_stat * 0.8, attack_stat * 1.2)) - block_stat
-        if true_damage > 0:
-            defending["stats"]["current_hp"] -= true_damage
-        else:
-            print("Attack was blocked!")
+        true_damage = random.choice(range(round(attack_stat * 0.8), round(attack_stat * 1.2))) - block_stat
+        return true_damage
     else:
         true_damage = random.choice(range(attack_stat - 1, attack_stat + 2))
-        if true_damage > 0:
-            defending["stats"]["current_hp"] -= true_damage
-        else:
-            print("Attack was blocked!")
+        return true_damage
+
+
+def calculate_hp_loss(defending, true_damage):
+    defending["stats"]["current_hp"] -= true_damage
+
+
+def display_damage(true_damage):
+    if true_damage > 0:
+        print(f"You got {true_damage} damage!")
+    else:
+        print("Attack was blocked!")
 
 
 def buff_character(character, item):
