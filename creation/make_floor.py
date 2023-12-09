@@ -10,14 +10,17 @@ import random
 def make_board():
     """
     Create a virtual game board.
+
+    :postcondition: create a dictionary that represents a virtual game board
+    :return: a dictionary that represents a virtual game board
     """
 
-    game_board = {(row, column): random.choice(range(5)) for row in range(13) for column in range(13)}
+    game_board = {(row, column): 0 for row in range(11) for column in range(11)}
     return game_board
 
 
 def main():
-    make_board()
+    print(make_board())
 
 
 if __name__ == "__main__":
