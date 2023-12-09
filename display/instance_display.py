@@ -53,11 +53,21 @@ def display_character_stats(character):
 
 
 def display_board(game_board, character):
-    visual_board = {}
+    """
+    Print a visual representation of the game board.
+
+    Print a visual representation of the game board including boss room location and player's current location.
+
+    :param game_board: is a dictionary with key-value pairs of coordinates and an int
+    :param character: is a dictionary with key-value pairs that represent character details
+    :precondition game_board: must be a dictionary with key-value pairs of coordinates and an int
+    :precondition character: must be a dictionary with key-value pairs that represent character details
+    :postcondition: print the game board with boss room location and player's current location
+    :return: None
+    """
+    visual_board = {item: False for item in game_board}
     character_coordinates = (character['coordinates'][0], character['coordinates'][1])
     boss_room_coordinates = (6, 6)
-    for item in game_board:
-        visual_board[item] = False
     visual_board[character_coordinates] = True
     visual_board[boss_room_coordinates] = True
     for row in range(13):
@@ -76,7 +86,7 @@ def describe_room(character, game_board):
 
 
 def main():
-    display_character_stats(create_character())
+    display_board(create_board(), create_character())
 
 
 if __name__ == "__main__":
