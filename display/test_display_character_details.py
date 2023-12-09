@@ -12,7 +12,7 @@ from instance_display import display_character_details
 
 class Test(TestCase):
     @patch("sys.stdout", new_callable=io.StringIO)
-    def test_display_character_details(self, mock_output):
+    def test_display_character_details_tommy(self, mock_output):
         character = {"name": "Tommy", "class": "front_end_developer", "job": "struggling student",
                      "level": 1, "exp": 0,
                      "inventory": [], "skills": ["control C and V"]}
@@ -28,13 +28,12 @@ class Test(TestCase):
         self.assertEqual(actual, expected)
 
     @patch("sys.stdout", new_callable=io.StringIO)
-    def test_display_character_stats(self, mock_output):
+    def test_display_character_details_matthew(self, mock_output):
         character = {"name": "Matthew", "class": "full_stack_developer", "job": "struggling student",
                      "level": 3, "exp": 21,
                      "inventory": [], "skills": ["control C and V"]}
         display_character_details(character)
         actual = mock_output.getvalue()
-        print(actual)
         expected = ("\nCharacter Class: full stack developer"
                     "\nCharacter Job: struggling student"
                     "\nCharacter Level: 3"
@@ -42,4 +41,3 @@ class Test(TestCase):
                     "\nInventory: []"
                     "\nSkills: ['control C and V']\n")
         self.assertEqual(actual, expected)
-

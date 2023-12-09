@@ -48,8 +48,8 @@ def display_character_stats(character):
     typing_speed = character["status"]["typing_speed"]["value"]
     luck = character["status"]["luck"]["value"]
     print(f"\nH(ope for coo)P: {current_hp}/{max_hp}\n"
-          f"Intelligence(attack): {typing_speed}\nMental Fortitude(defense): {mental_fortitude}\n"
-          f"Typing Speed(speed): {intelligence}\nLuck: {luck}\n")
+          f"Intelligence(attack): {intelligence}\nMental Fortitude(defense): {mental_fortitude}\n"
+          f"Typing Speed(speed): {typing_speed}\nLuck: {luck}\n")
 
 
 def display_board(game_board, character):
@@ -76,7 +76,7 @@ def describe_room(character, game_board):
 
 
 def main():
-    display_character_details(create_character())
+    display_character_stats(create_character())
 
 
 if __name__ == "__main__":
