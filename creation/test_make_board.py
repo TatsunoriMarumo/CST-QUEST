@@ -7,7 +7,7 @@ A01366848
 from unittest import TestCase
 from unittest.mock import patch
 import random
-from make_board import make_board
+from game_board import make_board
 
 
 class Test(TestCase):

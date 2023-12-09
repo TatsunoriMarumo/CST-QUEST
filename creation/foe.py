@@ -6,7 +6,7 @@ A01366848
 """
 
 
-def create_burnaby_student():
+def create_foe():
     """
     Create a foe, also known as Burnaby campus student
 
