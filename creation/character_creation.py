@@ -106,24 +106,26 @@ def assign_character_starting_stats(character, character_class):
 
 
 def create_character():
-    while True:
-        try:
-            user_name = get_username()
-        except ValueError as e:
-            print("{}".format(str(e)), file=sys.stderr)
-        else:
-            user_class = get_class()
-            character = {"name": user_name, "class": user_class, "job": "struggling student", "level": 1, "exp": 0,
-                         "status": None, "coordinates": [0, 0],
-                         "inventory": []}
+    """
+    Create playable character.
 
-            assign_character_starting_stats(character, user_class)
+    Create a dictionary with key-value pairs that represent different aspect of the playable character.
 
-            return character
+    :postcondition: create a dictionary that represents a playable character
+    :return: a dictionary that represents a playable character
+    """
+    user_name = get_username()
+    user_class = get_class()
+    character = {"name": user_name, "class": user_class, "job": "struggling student", "level": 1, "exp": 0,
+                 "status": None, "coordinates": [0, 0],
+                 "inventory": []}
+
+    assign_character_starting_stats(character, user_class)
+    return character
 
 
 def main():
-    print(get_class())
+    pass
 
 
 if __name__ == '__main__':
