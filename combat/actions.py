@@ -51,6 +51,22 @@ def determine_player_attack_type():
         raise KeyError("Not a valid action, please use integers 1 to 2, inclusive, to perform an action.")
 
 
-def choose_skill(character):
-    skills = character["skills"]
-    enumerate
+def display_skills(character):
+    skill_listing = ""
+    for number, skill in character["skills"].items():
+        skill_listing += f"{number}: {skill}\n"
+    back_to_menu = str(len(character["skills"].kys()) + 1)
+    skill_listing += f"{back_to_menu}: back to select action\n"
+    return print(skill_listing)
+
+
+def get_user_skill_choice(character):
+    print(f"choose a skill")
+    display_skills(character)
+    user_input = input("\n").strip()
+    skills_list = [key for key in character["skills"]]
+    skills_list.append(str(len(skills_list) + 1))
+    if user_input not in skills_list:
+        raise ValueError("Please provide a valid number")
+    else:
+        return user_input
