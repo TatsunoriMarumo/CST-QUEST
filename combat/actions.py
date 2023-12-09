@@ -49,3 +49,8 @@ def determine_player_attack_type():
         return possible_player_actions[player_action]
     except KeyError:
         raise KeyError("Not a valid action, please use integers 1 to 2, inclusive, to perform an action.")
+
+
+def choose_skill(character):
+    skills = character["skills"]
+    enumerate

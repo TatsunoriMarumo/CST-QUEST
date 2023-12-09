@@ -38,43 +38,43 @@ def add_skill(character: dict):
     character_class = character["class"]
     if character_level == 2:
         if character_class == "front_end_developer":
-            character["skills"].append("console.log")
+            character["skills"]["2"] = "console.log"
         elif character_class == "back_end_developer":
-            character["skills"].append('print("Hello World")')
+            character["skills"]["2"] = 'print("Hello World")'
         else:
-            character["skills"].append('print("Hello World")')
+            character["skills"]["2"] = 'print("Hello World")'
 
     elif character_level == 3:
         if character_class == "front_end_developer":
-            character["skills"].append("margin: auto")
+            character["skills"]["3"] = "margin: auto"
         elif character_class == "back_end_developer":
-            character["skills"].append("spread like bacteria")
+            character["skills"]["3"] = "spread like bacteria"
         else:
-            character["skills"].append('status(200)')
+            character["skills"]["3"] = 'status(200)'
 
     elif character_level == 4:
         if character_class == "front_end_developer":
-            character["skills"].append("display: flex")
+            character["skills"]["4"] = "display: flex"
         elif character_class == "back_end_developer":
-            character["skills"].append("roll a die")
+            character["skills"]["4"] = "roll a die"
         else:
-            character["skills"].append("try except")
+            character["skills"]["4"] = "try except"
 
     elif character_level == 5:
         if character_class == "front_end_developer":
-            character["skills"].append("addEventListener")
+            character["skills"]["5"] = "addEventListener"
         elif character_class == "back_end_developer":
-            character["skills"].append("try except")
+            character["skills"]["5"] = "try except"
         else:
-            character["skills"].append("git stash")
+            character["skills"]["5"] = "git stash"
 
     elif character_level == 6:
         if character_class == "front_end_developer":
-            character["skills"].append("github copilot")
+            character["skills"]["6"] = "github copilot"
         elif character_class == "back-end-developer":
-            character["skills"].append("give a chocolate")
+            character["skills"]["6"] = "give a chocolate"
         else:
-            character["skills"].append("implement API")
+            character["skills"]["6"] = "implement API"
 
 
 def main():
