@@ -28,7 +28,7 @@ def get_class():
 
     :precondition: player has chosen a username
     :postcondition: assign variable to player's selected class
-    :return: a variable with a string value
+    :return: a string
     :raises ValueError: if the user input is not 1, 2, or 3
     """
     while True:
@@ -74,7 +74,7 @@ def create_character():
         except ValueError as e:
             print("{}".format(str(e)), file=sys.stderr)
         else:
-            user_class = choose_class()
+            user_class = get_class()
             character = {"name": user_name, "class": user_class, "level": 1, "exp": 0, "status": None,
                          "coordinates": [0, 0],
                          "inventory": []}
@@ -85,7 +85,7 @@ def create_character():
 
 
 def main():
-    choose_class()
+    print(get_class())
 
 
 if __name__ == '__main__':
