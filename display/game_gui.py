@@ -7,7 +7,7 @@ A01366848
 
 import pygame
 from creation import character_creation
-character = make_character.create_character()
+character = character_creation.create_character()
 
 pygame.init()
 
