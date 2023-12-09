@@ -33,7 +33,7 @@ def get_class():
     """
     while True:
         user_class = (input("1: front-end developer\n2: back-end developer\n"
-                            "3: full-stack developer\nPlease choose a developer class using numbers: ").strip())
+                            "3: full-stack developer\nPlease choose a developer class using numbers: \n").strip())
 
         if user_class not in ["1", "2", "3"]:
             raise ValueError("Invalid input, Please choose a valid class number.")
