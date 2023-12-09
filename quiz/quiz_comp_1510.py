@@ -8,7 +8,7 @@ import random
 import sys
 
 
-def use_quiz_week_one():
+def ask_quiz_week_one():
     user_answer = input("Which ONE of the following is NOT a Python keyword?\n"
                         "1: in\n2: continue\n3: assert\n4: false\n").strip()
     if user_answer not in ["1", "2", "3", "4"]:
@@ -17,7 +17,7 @@ def use_quiz_week_one():
         return user_answer == "4"
 
 
-def use_quiz_week_two():
+def ask_quiz_week_two():
     user_answer = input("The flowchart symbol for making a choice is:\n"
                         "1: A sheared parallelogram\n2: A diamond\n3: A pill-shaped oval\n4: A rectangle\n").strip()
     if user_answer not in ["1", "2", "3", "4"]:
@@ -26,7 +26,7 @@ def use_quiz_week_two():
         return user_answer == "2"
 
 
-def use_quiz_week_three():
+def ask_quiz_week_three():
     user_answer = input('If word = "I love Fridays!", what is word[-3]?\n'
                         '1: This will cause an interpreter error\n2: "a"\n3: "y"\n4: "o"\n').strip()
     if user_answer not in ["1", "2", "3", "4"]:
@@ -35,7 +35,7 @@ def use_quiz_week_three():
         return user_answer == "3"
 
 
-def use_quiz_week_four():
+def ask_quiz_week_four():
     user_answer = input('What word do we use to describe two variables that are bound to the same object in the heap?\n'
                         '1: concatenated\n2: immutable\n3: references\n4: aliases\n').strip()
     if user_answer not in ["1", "2", "3", "4"]:
@@ -44,7 +44,7 @@ def use_quiz_week_four():
         return user_answer == "4"
 
 
-def use_quiz_week_five():
+def ask_quiz_week_five():
     user_answer = input("Which ONE of these reads the tokens generated from our source code using syntax rules?\n"
                         "1: compiler\n2: parser\n3: interpreter\n4: lever\n").strip()
     if user_answer not in ["1", "2", "3", "4"]:
@@ -53,7 +53,7 @@ def use_quiz_week_five():
         return user_answer == "2"
 
 
-def use_quiz_week_six():
+def ask_quiz_week_six():
     user_answer = input("What does the try block in a try-except statement do?\n"
                         "1: It runs a block of code and handles any exceptions that are thrown\n"
                         "2: It tries different blocks of code until one without an error is found\n"
@@ -65,7 +65,7 @@ def use_quiz_week_six():
         return user_answer == "1"
 
 
-def use_quiz_week_seven():
+def ask_quiz_week_seven():
     user_answer = input("What does short-circuiting mean in the context of logical operations in Python?\n"
                         "1: The second operand is not evaluated if the first operand is sufficient to determine the result\n"
                         "2: The logical operation is bypassed entirely\n"
@@ -77,7 +77,7 @@ def use_quiz_week_seven():
         return user_answer == "1"
 
 
-def use_quiz_week_eight():
+def ask_quiz_week_eight():
     user_answer = input("What is the purpose of the os.remove() function in Python?\n"
                         "1: To remove a specified directory\n"
                         "2: To remove a variable from memory\n"
@@ -89,7 +89,7 @@ def use_quiz_week_eight():
         return user_answer == "3"
 
 
-def use_quiz_week_nine():
+def ask_quiz_week_nine():
     user_answer = input("What is a characteristic of recursive functions in Python\n"
                         "1: They cannot have more than one base case\n"
                         "2: They are functions that call themselves\n"
@@ -101,7 +101,7 @@ def use_quiz_week_nine():
         return user_answer == "2"
 
 
-def use_quiz_week_ten():
+def ask_quiz_week_ten():
     user_answer = input("What is a closure in Python?\n"
                         "1: A feature that closes a file after its execution\n"
                         "2: A function that remembers the environment in which it was created\n"
@@ -113,7 +113,7 @@ def use_quiz_week_ten():
         return user_answer == "2"
 
 
-def use_bonus_quiz():
+def ask_bonus_quiz():
     user_answer = input("Bonus question!!\nChris is a good teacher\n1: True\n2: False\n")
     if user_answer not in ["1", "2"]:
         raise ValueError("Please answer with number between 1 and 2")
@@ -125,8 +125,8 @@ def use_bonus_quiz():
 
 
 def pick_quiz():
-    quiz_list = [use_quiz_week_one, use_quiz_week_two, use_quiz_week_three, use_quiz_week_four, use_quiz_week_five,
-                 use_quiz_week_six, use_quiz_week_seven, use_quiz_week_eight, use_quiz_week_nine, use_quiz_week_ten]
+    quiz_list = [ask_quiz_week_one, ask_quiz_week_two, ask_quiz_week_three, ask_quiz_week_four, ask_quiz_week_five,
+                 ask_quiz_week_six, ask_quiz_week_seven, ask_quiz_week_eight, ask_quiz_week_nine, ask_quiz_week_ten]
 
     copy_quiz_list = quiz_list.copy()
 
@@ -139,7 +139,22 @@ def pick_quiz():
         return copy_quiz_list.pop(index)
 
 
-def run_quiz(quiz):
+def check_answer(character, answer):
+    if answer:
+        character["status"]["intelligence"] += 1
+    else:
+        character["status"]["intelligence"] -= 1
+    return
+
+
+def display_result(answer):
+    if answer:
+        return print(f"{answer}: Your intelligence has increased by 1")
+    else:
+        return print(f"{answer}: Your intelligence has decreased by 1")
+
+
+def ask_quiz(quiz):
     while True:
         try:
             return quiz()
@@ -148,7 +163,7 @@ def run_quiz(quiz):
 
 
 def main():
-    print(run_quiz(pick_quiz()))
+    pass
 
 
 if __name__ == '__main__':
