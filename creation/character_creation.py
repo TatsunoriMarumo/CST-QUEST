@@ -113,8 +113,8 @@ def create_character():
             print("{}".format(str(e)), file=sys.stderr)
         else:
             user_class = get_class()
-            character = {"name": user_name, "class": user_class, "level": 1, "exp": 0, "status": None,
-                         "coordinates": [0, 0],
+            character = {"name": user_name, "class": user_class, "job": "struggling student", "level": 1, "exp": 0,
+                         "status": None, "coordinates": [0, 0],
                          "inventory": []}
 
             assign_character_starting_stats(character, user_class)
