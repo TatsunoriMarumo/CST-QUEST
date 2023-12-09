@@ -5,7 +5,7 @@ Ephraim Hsu
 A01366848
 """
 from creation import character_creation
-from creation import make_floor
+from creation import make_board
 
 
 def display_board(game_board, character):
