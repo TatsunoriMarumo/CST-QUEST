@@ -6,8 +6,7 @@ A01366848
 """
 
 import pygame
-from pygame.locals import *
-from CST_Quest.creation import make_character
+from creation import make_character
 character = make_character.create_character()
 
 pygame.init()
