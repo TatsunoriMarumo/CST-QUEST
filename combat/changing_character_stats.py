@@ -9,9 +9,9 @@ import random
 
 def calculate_hp_loss(attacking, attack_type, defending):
     attack_stat = attacking["stats"]["intelligence"]
-    block_stat = defending["stats"]["intelligence"]
+    block_stat = defending["stats"]["mentality"]
     if attack_type == "heavy_attack":
-        true_damage = random.choice(range(attack_stat * 1.2 - 3, attack_stat * 1.2)) - block_stat
+        true_damage = random.choice(range(attack_stat * 0.8, attack_stat * 1.2)) - block_stat
         if true_damage > 0:
             defending["stats"]["current_hp"] -= true_damage
         else:
