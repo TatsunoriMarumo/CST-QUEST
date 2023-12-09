@@ -36,14 +36,16 @@ def determine_foe_action(foe):
 
 
 def determine_player_attack_type():
-    possible_player_actions = {"1": "light_attack", "2": "heavy_attack", "3": "skill", "4": "item", "5": "run away"}
+    possible_player_actions = {"1": "light_attack", "2": "heavy_attack", "3": "block", "4": "skill", "5": "item",
+                               "6": "run away"}
     player_action = input(f"What action would you like to perform? "
-                          f"Please use please use integers 1 to 5, inclusive, to perform an action.\n\n"
+                          f"Please use please use integers 1 to 5, inclusive, to perform an action.\n"
                           f"1: Light Attack\n"
                           f"2: Heavy Attack\n"
-                          f"3: Skill\n"
-                          f"4: Item\n"
-                          f"5: Run away\n"
+                          f"3: Block\n"
+                          f"4: Skill\n"
+                          f"5: Item\n"
+                          f"6: Run away\n"
                           f"Your choice: ").strip()
     try:
         return possible_player_actions[player_action]
@@ -70,3 +72,4 @@ def get_user_skill_choice(character):
         raise ValueError("Please provide a valid number")
     else:
         return user_input
+
