@@ -124,7 +124,7 @@ def create_character():
 
 
 def main():
-    pass
+    print(create_character())
 
 
 if __name__ == '__main__':

@@ -76,7 +76,7 @@ def describe_room(character, game_board):
 
 
 def main():
-    display_character_stats(create_character())
+    display_character_details(create_character())
 
 
 if __name__ == "__main__":
