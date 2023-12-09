@@ -12,7 +12,7 @@ def get_username():
     Ask player for their username.
 
     :postcondition: assign variable to player's selected username
-    :return: a variable with a string value
+    :return: a string representing the player username
     :raises ValueError: if the user input only contains white space
     """
     user_name = input("Please enter your name:\n")
@@ -28,7 +28,7 @@ def get_class():
 
     :precondition: player has chosen a username
     :postcondition: assign variable to player's selected class
-    :return: a string
+    :return: a string representing the player's selecetd class
     :raises ValueError: if the user input is not 1, 2, or 3
     """
     while True:
@@ -45,25 +45,39 @@ def get_class():
             return "full_stack_developer"
 
 
-def assign_character_starting_stats(character, user_class):
-    if user_class == "front_end_developer":
+def assign_character_starting_stats(character, character_class):
+    """
+    Change a character's stats.
+
+    Change a character's stats based on the player's chosen class.
+
+    :param character: is a dictionary
+    :param character_class: is a string
+    :precondition character: must be a dictionary containing key-value pair of 'status' and a dictionary representing
+                             the character's stats
+    :precondition user_class: must be a string representing the player's selected class
+    :post condition: change a character's stats to specific default starting values based on class
+    :return: a dictionary representing the player's character
+    """
+    if character_class == "front_end_developer":
         character["status"] = {"max_hp": 10, "current_hp": 10,
-                               "intelligence": {"value": 5, "count": 0},
-                               "luck": {"value": 5, "count": 0},
-                               "typing_speed": {"value": 10, "count": 0},
-                               "mentality": {"value": 5, "count": 0}}
-    elif user_class == "back_end_developer":
+                               "intelligence": {"value": 5, "turn_count": 0},
+                               "mental_fortitude": {"value": 5, "turn_count": 0},
+                               "typing_speed": {"value": 10, "turn_count": 0},
+                               "luck": {"value": 5, "turn_count": 0}}
+
+    elif character_class == "back_end_developer":
         character["status"] = {"max_hp": 10, "current_hp": 10,
-                               "intelligence": {"value": 10, "count": 0},
-                               "luck": {"value": 5, "count": 0},
-                               "typing_speed": {"value": 5, "count": 0},
-                               "mentality": {"value": 5, "count": 0}}
+                               "intelligence": {"value": 10, "turn_count": 0},
+                               "mental_fortitude": {"value": 5, "turn_count": 0},
+                               "typing_speed": {"value": 5, "turn_count": 0},
+                               "luck": {"value": 5, "turn_count": 0}}
     else:
         character["status"] = {"max_hp": 10, "current_hp": 10,
-                               "intelligence": {"value": 7, "count": 0},
-                               "luck": {"value": 7, "count": 0},
-                               "typing_speed": {"value": 7, "count": 0},
-                               "mentality": {"value": 7, "count": 0}}
+                               "intelligence": {"value": 7, "turn_count": 0},
+                               "mental_fortitude": {"value": 7, "turn_count": 0},
+                               "typing_speed": {"value": 7, "turn_count": 0},
+                               "luck": {"value": 7, "turn_count": 0}}
     return character
 
 
