@@ -35,6 +35,10 @@ def determine_foe_action(foe):
             return action_type[0]
 
 
+def display_action(character, action):
+    return print(f"{character['name']} does {action}!!")
+
+
 def determine_player_attack_type():
     possible_player_actions = {"1": "light_attack", "2": "heavy_attack", "3": "block", "4": "skill", "5": "item",
                                "6": "run away"}
