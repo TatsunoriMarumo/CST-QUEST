@@ -202,6 +202,15 @@ def ask_bonus_quiz():
 
 
 def pick_quiz():
+    """
+    Select a quiz from a pool of quizzes.
+
+    Select a function, randomly, that will quiz the user.
+
+    :precondition: a list containing all the quiz functions must exist
+    :postcondition: select a quiz function
+    :return: a quiz function
+    """
     quiz_list = [ask_quiz_week_one, ask_quiz_week_two, ask_quiz_week_three, ask_quiz_week_four, ask_quiz_week_five,
                  ask_quiz_week_six, ask_quiz_week_seven, ask_quiz_week_eight, ask_quiz_week_nine, ask_quiz_week_ten]
 
