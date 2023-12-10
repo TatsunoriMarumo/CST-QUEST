@@ -60,4 +60,5 @@ def run_combat(character):
                 print(f"You win!\nYou got {foe['exp']}")
                 character["exp"] += foe["exp"]
                 break
+    return
 

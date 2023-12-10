@@ -5,7 +5,7 @@ Ephraim Hsu
 A01366848
 """
 
-from combat import actions, changing_character_stats, inventory, level_up
+from combat import actions, changing_character_stats, inventory, level_up, combat
 from creation import character_creation, game_board, create_foe
 from display import instance_display, introduce_story
 from movement import character_movement, encounter
@@ -33,9 +33,11 @@ def game():
         if encounter.check_encounter():
             encounter_type = encounter.check_encounter_type()
             if encounter_type == "combat":
-                quiz_comp_1510.run_quiz(character)
+                combat.run_combat(character)
+
+
             elif encounter_type == "quiz":
-                pass
+                quiz_comp_1510.run_quiz(character)
             elif encounter_type == "random_event":
                 pass
             else:
