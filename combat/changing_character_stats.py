@@ -43,7 +43,9 @@ def heal_character_with_item(character, item):
 
 
 def heal_character_with_block(character):
-    character[f"status"][f"current_hp"] += character["status"]["mentality"]["value"]
+    heal_amount = round(character["status"]["max_hp"] / 4)
+    character[f"status"][f"current_hp"] += heal_amount
+    print(f"{character['name']}'s HP is now {character['status']['current_hp']}/{character['status']['max_hp']}")
 
 
 def decrement_buff_count(character_instance):
