@@ -85,3 +85,19 @@ def move_character(character, user_choice):
     else:
         character["coordinates"][1] += -1
     return character
+
+
+def validate_boss_room_level_requirement(character):
+    """
+    Validate if player can enter boss room.
+
+    :param character: a dictionary with key-pair values that represent character details
+    :precondition character: must be a dictionary with key-pair values that represent character details
+    :postcondition: validate the character level
+    :return: a boolean value representing permission to enter boss room
+    """
+    if character["leve"] == 6:
+        return True
+    else:
+        print("Level 6 is required to fight the final boss. You are too low level.")
+        return False

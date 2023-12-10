@@ -127,6 +127,7 @@ def create_character():
             assign_character_starting_stats(character, user_class)
             return character
 
+
 def main():
     print(create_character())
 
