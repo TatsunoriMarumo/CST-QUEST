@@ -40,3 +40,7 @@ heavy attack: an attack with a wide range of damage
 block: healing
 skill: attack relying on luck
 run away: try to run away from combat
+
+Please run game.py to play the game.
+
+Thank you for teaching us for term 1!
