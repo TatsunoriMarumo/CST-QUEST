@@ -7,7 +7,9 @@ A01366848
 
 import fights
 import game_board
+import level_up
 import character_creation
+import changing_character_stats
 import introduce_story
 import instance_display
 import encounter
@@ -21,6 +23,8 @@ def game():
     character = character_creation.create_character()
     game_map = game_board.create_board()
     instance_display.display_board(game_map, character)
+    instance_display.display_character_details(character)
+    instance_display.display_character_stats(character)
     while True:
         try:
             player_direction = character_movement.get_user_choice()
@@ -44,6 +48,10 @@ def game():
                 pass
             else:
                 print("This room seems to be empty...")
+        if level_up.check_level_up(character):
+            fights.combat_with_boss(character)
+        if changing_character_stats.check_death(character):
+            print(f"Game over\n{character['name']} failed the course...")
 
 
 def main():

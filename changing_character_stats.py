@@ -4,6 +4,7 @@ A01327744
 Ephraim Hsu
 A01366848
 """
+import copy
 import random
 
 
@@ -20,6 +21,9 @@ def calculate_damage(attacking, attack_type, defending):
 
 def calculate_hp_loss(defending, true_damage):
     defending["status"]["current_hp"] -= true_damage
+    if defending["status"]["current_hp"] < 0:
+        defending["status"]["current_hp"] = 0
+    return
 
 
 def display_damage(character, true_damage):
@@ -44,7 +48,13 @@ def heal_character_with_item(character, item):
 
 def heal_character_with_block(character):
     heal_amount = round(character["status"]["max_hp"] / 4)
-    character[f"status"][f"current_hp"] += heal_amount
+    hp_before_block = character["status"]["current_hp"]
+    character["status"]["current_hp"] += heal_amount
+    if character["status"]["max_hp"] < character["status"]["current_hp"]:
+        character["status"]["current_hp"] = character["status"]["max_hp"]
+    hp_after_block = copy.copy(character["status"]["current_hp"])
+    heal_amount = hp_after_block - hp_before_block
+    print(f"{character['name']} has healed {heal_amount}!")
     print(f"{character['name']}'s HP is now {character['status']['current_hp']}/{character['status']['max_hp']}")
 
 

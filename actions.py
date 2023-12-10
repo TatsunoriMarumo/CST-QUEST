@@ -5,6 +5,7 @@ Ephraim Hsu
 A01366848
 """
 import random
+import sys
 
 
 def determine_turn_order(character, foe):
@@ -36,25 +37,27 @@ def determine_foe_action(foe):
 
 
 def display_action(character, action):
-    return print(f"{character['name']} does {action}!!")
+
+    return print(f"{character['name']}'s turn!\n{character['name']} does {action}!!")
 
 
 def determine_player_attack_type():
     possible_player_actions = {"1": "light_attack", "2": "heavy_attack", "3": "block", "4": "skill", "5": "item",
                                "6": "run away"}
-    player_action = input(f"What action would you like to perform? "
-                          f"Please use please use integers 1 to 5, inclusive, to perform an action.\n"
-                          f"1: Light Attack\n"
-                          f"2: Heavy Attack\n"
-                          f"3: Block\n"
-                          f"4: Skill\n"
-                          f"5: Item\n"
-                          f"6: Run away\n"
-                          f"Your choice: ").strip()
-    try:
-        return possible_player_actions[player_action]
-    except KeyError:
-        raise KeyError("Not a valid action, please use integers 1 to 2, inclusive, to perform an action.")
+    while True:
+        try:
+            player_action = input(f"What action would you like to perform? "
+                                  f"Please use please use integers 1 to 5, inclusive, to perform an action.\n"
+                                  f"1: Light Attack\n"
+                                  f"2: Heavy Attack\n"
+                                  f"3: Block\n"
+                                  f"4: Skill\n"
+                                  f"5: Run away\n"
+                                  f"Your choice: ").strip()
+            return possible_player_actions[player_action]
+        except KeyError as e:
+            print("Not a valid action, please use integers 1 to 2, inclusive, to perform an action: {}."
+                  .format(str(e)), file=sys.stderr)
 
 
 def display_skills(character):
@@ -63,7 +66,7 @@ def display_skills(character):
         if not character["skills"]:
             return
         skill_listing += f"{number}: {skill}\n"
-    back_to_menu = str(len(character["skills"].kys()) + 1)
+    back_to_menu = str(len(character["skills"].keys()) + 1)
     skill_listing += f"{back_to_menu}: back to select action\n"
     return print(skill_listing)
 
@@ -71,11 +74,13 @@ def display_skills(character):
 def get_user_skill_choice(character):
     print(f"choose a skill")
     display_skills(character)
-    user_input = input("\n").strip()
-    skills_list = [key for key in character["skills"]]
-    skills_list.append(str(len(skills_list) + 1))
-    if user_input not in skills_list:
-        raise ValueError("Please provide a valid number")
-    else:
-        return user_input
-
+    while True:
+        try:
+            user_input = input("\n").strip()
+            skills_list = [key for key in character["skills"]]
+            skills_list.append(str(len(skills_list) + 1))
+            if user_input not in skills_list:
+                raise ValueError("Please provide a valid number")
+            return user_input
+        except ValueError as e:
+            print(f"{str(e)}", file=sys.stderr)

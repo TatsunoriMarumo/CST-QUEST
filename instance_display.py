@@ -21,11 +21,10 @@ def display_character_details(character):
     character_job = character["job"]
     character_level = character["level"]
     character_experience = character["exp"]
-    inventory = character["inventory"]
-    skills = character["skills"]
     print(f"\nCharacter Class: {character_class}\nCharacter Job: {character_job}\n"
-          f"Character Level: {character_level}\nCharacter Experience: {character_experience}\n"
-          f"Inventory: {inventory}\nSkills: {skills}")
+          f"Character Level: {character_level}\nCharacter Experience: {character_experience}")
+    for key, value in character["skills"].items():
+        print(f"{key}: {value}")
 
 
 def display_character_stats(character):
