@@ -105,9 +105,9 @@ def describe_room(game_board, character):
                                  "handful of dimly lit torches, and moss.\nNow this is what a dungeon should look like,"
                                  " just kidding, before you can get too excited about being in a real dungeon the\n"
                                  "holograms and reflective screens turn off and you find yourself in the BCIT "
-                                 "downtown campus Tech Hub",
+                                 "downtown campus Tech Hub.",
                               3: "You enter into what looks like a normal dungeon room.",
-                              4: "You cautiously enter a room that is pitch black"}
+                              4: "You cautiously enter a room that is pitch black."}
     room_key = game_board[character["coordinates"][0], character["coordinates"][1]]
     print(room_descriptions_pool[room_key])
 
