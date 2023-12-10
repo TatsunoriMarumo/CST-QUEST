@@ -275,6 +275,13 @@ def ask_quiz(quiz):
 
 
 def run_quiz(character):
+    """
+    Invoke helper functions to similate a quiz for the player.
+
+    :param character: a dictionary with key-value pairs representing character details
+    :postcondition: simulate a quiz for the player
+    :return: None
+    """
     print("QUIZ!!")
     answer = ask_quiz(pick_quiz())
     check_answer(character, answer)
