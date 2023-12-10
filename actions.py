@@ -6,6 +6,7 @@ A01366848
 """
 import random
 import sys
+from instance_display import delayed_print
 
 
 def determine_turn_order(character, foe):
@@ -38,7 +39,7 @@ def determine_foe_action(foe):
 
 def display_action(character, action):
 
-    return print(f"{character['name']}'s turn!\n{character['name']} does {action}!!")
+    return delayed_print(f"{character['name']}'s turn!\n{character['name']} does {action}!!")
 
 
 def determine_player_attack_type():
@@ -71,7 +72,7 @@ def display_skills(character):
 
 
 def get_user_skill_choice(character):
-    print(f"choose a skill")
+    delayed_print(f"choose a skill")
     display_skills(character)
     while True:
         try:

@@ -6,6 +6,7 @@ A01366848
 """
 import random
 import sys
+from instance_display import delayed_print
 
 
 def ask_quiz_week_one():
@@ -253,9 +254,9 @@ def display_result(answer):
     :return: None
     """
     if answer:
-        return print(f"{answer}: Your intelligence has increased by 1")
+        return delayed_print(f"{answer}: Your intelligence has increased by 1")
     else:
-        return print(f"{answer}: Your intelligence has decreased by 1")
+        return delayed_print(f"{answer}: Your intelligence has decreased by 1")
 
 
 def ask_quiz(quiz):
@@ -282,7 +283,7 @@ def run_quiz(character):
     :postcondition: simulate a quiz for the player
     :return: None
     """
-    print("QUIZ!!")
+    delayed_print("QUIZ!!")
     answer = ask_quiz(pick_quiz())
     check_answer(character, answer)
     display_result(answer)

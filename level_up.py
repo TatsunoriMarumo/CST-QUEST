@@ -5,6 +5,8 @@ Ephraim Hsu
 A01366848
 """
 
+from instance_display import delayed_print
+
 
 def check_level_up(character: dict):
     if character["level"] >= 6:
@@ -91,12 +93,12 @@ def add_skill(character: dict):
 def change_level(character):
     if check_level_up(character):
         level_up(character)
-        print(f"you have leveled up!\nYou became level{character['level']}!")
+        delayed_print(f"you have leveled up!\nYou became level{character['level']}!")
         increase_status(character)
         add_skill(character)
-        print(f"Wow! {character['name']} has learned {character['skills'][character['level']]}!")
+        delayed_print(f"Wow! {character['name']} has learned {character['skills'][character['level']]}!")
         change_job(character)
-        print(f"Congratulations!\nNow {character['name']} became a {character['job']}!")
+        delayed_print(f"Congratulations!\nNow {character['name']} became a {character['job']}!")
 
 
 def main():

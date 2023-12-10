@@ -7,21 +7,22 @@ A01366848
 import actions
 import changing_character_stats
 import create_foe
+from instance_display import delayed_print
 
 
 def run_combat(character):
     foe = create_foe.assign_foe(character)
-    print(f"A {foe['name']} appeared!!")
+    delayed_print(f"A {foe['name']} appeared!!")
 
     while True:
         player_action = actions.determine_player_attack_type()
         foe_action = actions.determine_foe_action(foe)
         if player_action == "run away":
             if actions.check_run_away(character, foe):
-                print(f"{character['name']} has run away from {foe['name']}!")
+                delayed_print(f"{character['name']} has run away from {foe['name']}!")
                 break
             else:
-                print(f"{character['name']} failed to run away\nFace reality...")
+                delayed_print(f"{character['name']} failed to run away\nFace reality...")
 
         elif player_action == "skill":
             actions.display_skills(character)
@@ -29,7 +30,7 @@ def run_combat(character):
             if player_choice_skill == str(len(character["skills"]) + 1):
                 player_action = actions.determine_player_attack_type()
             elif player_choice_skill == str(len(character["skills"])):
-                print(f"{character['name']} uses {character['skills'][player_choice_skill]}!!")
+                delayed_print(f"{character['name']} uses {character['skills'][player_choice_skill]}!!")
         first_turn = actions.determine_turn_order(character, foe)
         if first_turn == character:
             if player_action == "block":
@@ -42,7 +43,7 @@ def run_combat(character):
                 changing_character_stats.display_damage(foe, damage)
 
             if changing_character_stats.check_death(foe):
-                print(f"You win!\nYou got {foe['status']['exp']} exp")
+                delayed_print(f"You win!\nYou got {foe['status']['exp']} exp")
                 character["exp"] += foe["status"]["exp"]
                 break
 
@@ -56,7 +57,7 @@ def run_combat(character):
                 changing_character_stats.display_damage(character, damage)
 
             if changing_character_stats.check_death(character):
-                print("You died")
+                delayed_print("You died")
                 break
 
         elif first_turn == foe:
@@ -70,7 +71,7 @@ def run_combat(character):
                 changing_character_stats.display_damage(character, damage)
 
             if changing_character_stats.check_death(character):
-                print("You died")
+                delayed_print("You died")
                 break
 
             if player_action == "block":
@@ -83,7 +84,7 @@ def run_combat(character):
                 changing_character_stats.display_damage(foe, damage)
 
             if changing_character_stats.check_death(foe):
-                print(f"You win!\nYou got {foe['status']['exp']} exp")
+                delayed_print(f"You win!\nYou got {foe['status']['exp']} exp")
                 character["exp"] += foe["status"]["exp"]
                 break
     return
@@ -91,13 +92,13 @@ def run_combat(character):
 
 def combat_with_boss(character):
     boss = create_foe.assign_boss(character)
-    print("⚠️⚠️⚠️⚠️You have reached the required level to fight the BOSS!⚠️⚠️⚠️⚠️")
-    print(f"⚠️⚠️⚠️⚠️Battle with {boss['name']}!!⚠️⚠️⚠️⚠️")
+    delayed_print("⚠️⚠️⚠️⚠️You have reached the required level to fight the BOSS!⚠️⚠️⚠️⚠️")
+    delayed_print(f"⚠️⚠️⚠️⚠️Battle with {boss['name']}!!⚠️⚠️⚠️⚠️")
     while True:
         player_action = actions.determine_player_attack_type()
         boss_action = actions.determine_foe_action(boss)
         if player_action == "run away":
-            print(f"You cannot run away from {boss['name']}!")
+            delayed_print(f"You cannot run away from {boss['name']}!")
 
         elif player_action == "skill":
             actions.display_skills(character)
@@ -117,7 +118,7 @@ def combat_with_boss(character):
                 changing_character_stats.display_damage(boss, damage)
 
             if changing_character_stats.check_death(boss):
-                print(f"You win!\nYou got {boss['exp']}")
+                delayed_print(f"You win!\nYou got {boss['exp']}")
                 character["exp"] += boss["exp"]
                 break
 
@@ -131,7 +132,7 @@ def combat_with_boss(character):
                 changing_character_stats.display_damage(boss, damage)
 
             if changing_character_stats.check_death(character):
-                print("You died")
+                delayed_print("You died")
                 break
 
         elif first_turn == boss:
@@ -145,7 +146,7 @@ def combat_with_boss(character):
                 changing_character_stats.display_damage(character, damage)
 
             if changing_character_stats.check_death(character):
-                print("You died")
+                delayed_print("You died")
                 return False
 
             if player_action == "block":
@@ -158,6 +159,6 @@ def combat_with_boss(character):
                 changing_character_stats.display_damage(boss, damage)
 
             if changing_character_stats.check_death(boss):
-                print(f"You win!\n Congratulations! {character['name']} has passed level {character['level']} course!")
+                delayed_print(f"You win!\n Congratulations! {character['name']} has passed level {character['level']} course!")
                 return True
     return

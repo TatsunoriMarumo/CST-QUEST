@@ -6,7 +6,7 @@ A01366848
 """
 import copy
 import random
-
+from instance_display import delayed_print
 
 def calculate_damage(attacking, attack_type, defending):
     attack_stat = attacking["status"]["intelligence"]["value"]
@@ -33,10 +33,10 @@ def calculate_hp_loss(defending, true_damage):
 
 def display_damage(character, true_damage):
     if true_damage > 0:
-        print(f"{character['name']} got {true_damage} damage!")
-        print(f"{character['name']}'s HP is now {character['status']['current_hp']}/{character['status']['max_hp']}")
+        delayed_print(f"{character['name']} got {true_damage} damage!")
+        delayed_print(f"{character['name']}'s HP is now {character['status']['current_hp']}/{character['status']['max_hp']}")
     else:
-        print("Attack was blocked!")
+        delayed_print("Attack was blocked!")
 
 
 def buff_character(character, item):
@@ -59,8 +59,8 @@ def heal_character_with_block(character):
         character["status"]["current_hp"] = character["status"]["max_hp"]
     hp_after_block = copy.copy(character["status"]["current_hp"])
     heal_amount = hp_after_block - hp_before_block
-    print(f"{character['name']} has healed {heal_amount}!")
-    print(f"{character['name']}'s HP is now {character['status']['current_hp']}/{character['status']['max_hp']}")
+    delayed_print(f"{character['name']} has healed {heal_amount}!")
+    delayed_print(f"{character['name']}'s HP is now {character['status']['current_hp']}/{character['status']['max_hp']}")
 
 
 def decrement_buff_count(character_instance):

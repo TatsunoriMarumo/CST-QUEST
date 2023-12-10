@@ -5,6 +5,13 @@ Ephraim Hsu
 A01366848
 """
 
+import time
+
+
+def delayed_print(message, delay=1.5):
+    print(message)
+    time.sleep(delay)
+
 
 def display_character_details(character):
     """
@@ -106,7 +113,7 @@ def describe_room(game_board, character):
                               3: "You enter into what looks like a normal dungeon room.",
                               4: "You cautiously enter a room that is pitch black."}
     room_key = game_board[character["coordinates"][0], character["coordinates"][1]]
-    print(room_descriptions_pool[room_key])
+    delayed_print(room_descriptions_pool[room_key])
 
 
 def main():
