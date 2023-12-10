@@ -9,12 +9,8 @@ Second optional sentence.
 :return:
 :raises ValueError:
 """
-from combat import actions, changing_character_stats, inventory, level_up
-from creation import character_creation, foe, game_board
+from creation import character_creation, game_board
 from display import instance_display, introduce_story
-from event import encounter
-from quiz import quiz_comp_1510
-import sys
 
 
 def main():
@@ -24,7 +20,6 @@ def main():
     while True:
         instance_display.display_board(game_map, character)
         instance_display.describe_room(game_map, character)
-        return
 
 
 if __name__ == '__main__':
