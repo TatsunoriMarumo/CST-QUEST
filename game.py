@@ -5,11 +5,14 @@ Ephraim Hsu
 A01366848
 """
 
-from combat import fights, changing_character_stats, inventory, level_up
-from creation import character_creation, game_board, create_foe
-from display import instance_display, introduce_story
-from movement import character_movement, encounter
-from quiz import quiz_comp_1510
+import fights
+import game_board
+import character_creation
+import introduce_story
+import instance_display
+import encounter
+import character_movement
+import quiz_comp_1510
 import sys
 
 
