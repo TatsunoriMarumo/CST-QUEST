@@ -65,10 +65,16 @@ def validate_move(board, character, direction):
 
 def move_character(character, user_choice):
     """
+    Move the player's character on the virtual game board
 
-    :param character:
-    :param user_choice:
-    :return:
+    Change the coordinates of the player's character to the coordinates of the room they have chosen to move into.
+
+    :param character: a dictionary with key-value pairs representing character details
+    :param user_choice: a string representing the player's chosen cardinal direction
+    :precondition character: must be
+    :precondition user_choice: must be
+    :postcondition: change the value of the 'coordinates' key in the character dictionary to the new room's location.
+    :return: a dictionary representing the player's character
     """
     if user_choice == "north":
         character["coordinates"][0] += -1
