@@ -31,18 +31,19 @@ def get_user_choice():
 
 def validate_move(board, character, direction):
     """
-    Check if user's movement is valid
+    Validate a player's chosen cardinal direction.
 
-    This function checks if user crosses the boundaries of the game board when user moves
+    Determine if a player's chosen cardinal direction is valid based on character position on the board.
 
-    :param board: the game board
-    :param character: the character user plays
-    :param direction: the direction user wants to go
-    :precondition: board must be a dictionary that contains rows and columns as keys
-    :precondition: character must be a dictionary that contains X-coordinate and Y-coordinate as keys
-    :precondition: direction must be north, east, south, or west stored as string
-    :postcondition: board and character are not modified
-    :return: True if user does not cross the boundaries of the game board, False if user does so
+    :param board: a dictionary with key-value pairs of coordinates and an integer
+    :param character: a dictionary with key-value pairs representing character details
+    :param direction: a string representing the player's chosen cardinal direction
+    :precondition: must be a dictionary with key-value pairs of coordinates and an integer
+    :precondition: must be a dictionary with key-value pairs representing character details
+    :precondition: must be a string representing the player's chosen cardinal direction
+    :postcondition: determine if a player is allowed to move their character in a chosen direction
+    :return: boolean value True
+    :raises ValueError: if player's chosen cardinal direction will move the character out of bounds
     """
 
     copy_character = copy.deepcopy(character)
