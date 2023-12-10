@@ -131,11 +131,11 @@ def pick_quiz():
     copy_quiz_list = quiz_list.copy()
 
     if quiz_list:
-        index = random.randint(0, len(quiz_list) - 1)
+        index = random.randint(0, len(copy_quiz_list) - 1)
         return copy_quiz_list.pop(index)
     else:
         copy_quiz_list = quiz_list.copy()
-        index = random.randint(0, len(quiz_list) - 1)
+        index = random.randint(0, len(copy_quiz_list) - 1)
         return copy_quiz_list.pop(index)
 
 
@@ -163,7 +163,8 @@ def ask_quiz(quiz):
 
 
 def run_quiz(character):
-    answer = ask_quiz(pick_quiz)
+    print("QUIZ!!")
+    answer = ask_quiz(pick_quiz())
     check_answer(character, answer)
     display_result(answer)
 

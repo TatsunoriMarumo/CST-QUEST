@@ -17,9 +17,8 @@ def game():
     introduce_story.story_introduction()
     character = character_creation.create_character()
     game_map = game_board.create_board()
+    instance_display.display_board(game_map, character)
     while True:
-        instance_display.display_board(game_map, character)
-
         try:
             player_direction = get_user_direction.get_user_choice()
         except (ValueError, KeyError, IndexError, TypeError) as e:

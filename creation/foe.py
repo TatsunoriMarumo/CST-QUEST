@@ -5,6 +5,7 @@ Ephraim Hsu
 A01366848
 """
 
+import random
 
 def create_foe_year_one():
     """
@@ -30,7 +31,7 @@ def create_foe_year_two():
                       "typing_speed": 3, "luck": 3, "exp": 3}}
 
 
-def create_foe_level_international():
+def create_foe_international():
     """
     Create a foe, also known as Burnaby campus student
 
@@ -148,3 +149,18 @@ def create_foe_chris():
     return {"name": "Chris",
             "stats": {"current_hp": 17, "intelligence": 17, "mental_fortitude": 17,
                       "typing_speed": 17, "luck": 17}}
+
+
+def assign_foe(character):
+    foe_level_one = create_foe_year_one()
+    foe_level_two = create_foe_year_two()
+    foe_level_three = create_foe_international()
+    foe_level_four = create_foe_elite()
+    foe_level_five = create_foe_set_rep()
+    foe_level_six = create_foe_graduate()
+
+    if character["level"] == 1:
+        return foe_level_one
+    elif character["level"] == 2:
+        return random.choice([foe_level_one, foe_level_two, foe_level_three])
+    elif character["level"] == 3:
