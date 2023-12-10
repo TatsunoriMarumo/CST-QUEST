@@ -58,4 +58,4 @@ def decrement_buff_count(character_instance):
 
 
 def check_death(defending):
-    return defending["current_hp"] <= 0
+    return defending["status"]["current_hp"] <= 0

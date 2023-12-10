@@ -33,8 +33,8 @@ def run_combat(character):
                 changing_character_stats.display_damage(foe, damage)
 
             if changing_character_stats.check_death(foe):
-                print(f"You win!\nYou got {foe['exp']}")
-                character["exp"] += foe["exp"]
+                print(f"You win!\nYou got {foe['status']['exp']}")
+                character["status"]["exp"] += foe["status"]["exp"]
                 break
 
             if foe_action == "block":
@@ -72,8 +72,8 @@ def run_combat(character):
                 changing_character_stats.calculate_hp_loss(foe, damage)
 
             if changing_character_stats.check_death(foe):
-                print(f"You win!\nYou got {foe['exp']}")
-                character["exp"] += foe["exp"]
+                print(f"You win!\nYou got {foe['status']['exp']}")
+                character["status"]["exp"] += foe["status"]["exp"]
                 break
     return
 
