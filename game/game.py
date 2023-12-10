@@ -23,7 +23,6 @@ def game():
             player_direction = get_user_direction.get_user_choice()
         except (ValueError, KeyError, IndexError, TypeError) as e:
             print(f"{str(e)}", file=sys.stderr)
-
         try:
             if validate_move.validate_move(game_map, character, player_direction):
                 move_character.move_character(character, player_direction)
@@ -33,10 +32,14 @@ def game():
 
         if encounter.check_encounter():
             encounter_type = encounter.check_encounter_type()
-            if encounter_type == "quiz":
+            if encounter_type == "combat":
                 quiz_comp_1510.run_quiz(character)
+            elif encounter_type == "quiz":
+                pass
+            elif encounter_type == "random_event":
+                pass
             else:
-                continue
+                print("This room seems to be empty...")
 
 
 def main():

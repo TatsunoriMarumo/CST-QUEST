@@ -24,18 +24,21 @@ def check_encounter():
 
 
 def check_encounter_type():
-    random_number = random.randint(1, 6)
-    if 1 <= random_number <= 3:
-        return "combat"
-    elif 4 <= random_number <= 5:
-        return "quiz"
-    else:
-        return "random_event"
+    """
+    Determine what type of encounter player experiences.
 
-#
-# def implement_encounter(encounter_type, character, combat, quiz, random_event):
-#     encounter_dict = {"combat": combat(), "quiz": quiz, "random_event": random_event}
-#     return encounter_dict[encounter_type]()
+    :postcondition: determine if player will encounter foe, puzzle, random event, or nothing
+    :return: if encounter type is nothing, return None, else return a string
+    """
+    random_number = random.randint(0, 10)
+    if 0 <= random_number <= 1:
+        return "combat"
+    elif 2 <= random_number <= 3:
+        return "quiz"
+    elif 4 <= random_number <= 5:
+        return "random_event"
+    else:
+        return None
 
 
 def main():
