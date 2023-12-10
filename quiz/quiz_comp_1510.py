@@ -9,6 +9,13 @@ import sys
 
 
 def ask_quiz_week_one():
+    """
+    Prompt user with basic programming questions based on the python language.
+
+    :postcondition: validate user input and check if answer is correct
+    :return: 4 in string form if user choice is 4 or else return None
+    :raises ValueError: if user input is not an integer between 1 and 4 inclusive
+    """
     user_answer = input("Which ONE of the following is NOT a Python keyword?\n"
                         "1: in\n2: continue\n3: assert\n4: false\n").strip()
     if user_answer not in ["1", "2", "3", "4"]:
@@ -18,6 +25,13 @@ def ask_quiz_week_one():
 
 
 def ask_quiz_week_two():
+    """
+    Prompt user with basic programming questions based on the python language.
+
+    :postcondition: validate user input and check if answer is correct
+    :return: 2 in string form if user choice is 2 or else return None
+    :raises ValueError: if user input is not an integer between 1 and 4 inclusive
+    """
     user_answer = input("The flowchart symbol for making a choice is:\n"
                         "1: A sheared parallelogram\n2: A diamond\n3: A pill-shaped oval\n4: A rectangle\n").strip()
     if user_answer not in ["1", "2", "3", "4"]:
@@ -27,6 +41,13 @@ def ask_quiz_week_two():
 
 
 def ask_quiz_week_three():
+    """
+    Prompt user with basic programming questions based on the python language.
+
+    :postcondition: validate user input and check if answer is correct
+    :return: 3 in string form if user choice is 3 or else return None
+    :raises ValueError: if user input is not an integer between 1 and 4 inclusive
+    """
     user_answer = input('If word = "I love Fridays!", what is word[-3]?\n'
                         '1: This will cause an interpreter error\n2: "a"\n3: "y"\n4: "o"\n').strip()
     if user_answer not in ["1", "2", "3", "4"]:
@@ -36,6 +57,13 @@ def ask_quiz_week_three():
 
 
 def ask_quiz_week_four():
+    """
+    Prompt user with basic programming questions based on the python language.
+
+    :postcondition: validate user input and check if answer is correct
+    :return: 4 in string form if user choice is 4 or else return None
+    :raises ValueError: if user input is not an integer between 1 and 4 inclusive
+    """
     user_answer = input('What word do we use to describe two variables that are bound to the same object in the heap?\n'
                         '1: concatenated\n2: immutable\n3: references\n4: aliases\n').strip()
     if user_answer not in ["1", "2", "3", "4"]:
@@ -45,6 +73,13 @@ def ask_quiz_week_four():
 
 
 def ask_quiz_week_five():
+    """
+    Prompt user with basic programming questions based on the python language.
+
+    :postcondition: validate user input and check if answer is correct
+    :return: 2 in string form if user choice is 2 or else return None
+    :raises ValueError: if user input is not an integer between 1 and 4 inclusive
+    """
     user_answer = input("Which ONE of these reads the tokens generated from our source code using syntax rules?\n"
                         "1: compiler\n2: parser\n3: interpreter\n4: lever\n").strip()
     if user_answer not in ["1", "2", "3", "4"]:
@@ -54,6 +89,13 @@ def ask_quiz_week_five():
 
 
 def ask_quiz_week_six():
+    """
+    Prompt user with basic programming questions based on the python language.
+
+    :postcondition: validate user input and check if answer is correct
+    :return: 1 in string form if user choice is 1 or else return None
+    :raises ValueError: if user input is not an integer between 1 and 4 inclusive
+    """
     user_answer = input("What does the try block in a try-except statement do?\n"
                         "1: It runs a block of code and handles any exceptions that are thrown\n"
                         "2: It tries different blocks of code until one without an error is found\n"
@@ -66,6 +108,13 @@ def ask_quiz_week_six():
 
 
 def ask_quiz_week_seven():
+    """
+    Prompt user with basic programming questions based on the python language.
+
+    :postcondition: validate user input and check if answer is correct
+    :return: 1 in string form if user choice is 1 or else return None
+    :raises ValueError: if user input is not an integer between 1 and 4 inclusive
+    """
     user_answer = input("What does short-circuiting mean in the context of logical operations in Python?\n"
                         "1: The second operand is not evaluated if the first operand is sufficient to determine the result\n"
                         "2: The logical operation is bypassed entirely\n"
@@ -78,6 +127,13 @@ def ask_quiz_week_seven():
 
 
 def ask_quiz_week_eight():
+    """
+    Prompt user with basic programming questions based on the python language.
+
+    :postcondition: validate user input and check if answer is correct
+    :return: 3 in string form if user choice is 3 or else return None
+    :raises ValueError: if user input is not an integer between 1 and 4 inclusive
+    """
     user_answer = input("What is the purpose of the os.remove() function in Python?\n"
                         "1: To remove a specified directory\n"
                         "2: To remove a variable from memory\n"
@@ -90,6 +146,13 @@ def ask_quiz_week_eight():
 
 
 def ask_quiz_week_nine():
+    """
+    Prompt user with basic programming questions based on the python language.
+
+    :postcondition: validate user input and check if answer is correct
+    :return: 2 in string form if user choice is 2 or else return None
+    :raises ValueError: if user input is not an integer between 1 and 4 inclusive
+    """
     user_answer = input("What is a characteristic of recursive functions in Python\n"
                         "1: They cannot have more than one base case\n"
                         "2: They are functions that call themselves\n"
@@ -102,6 +165,13 @@ def ask_quiz_week_nine():
 
 
 def ask_quiz_week_ten():
+    """
+    Prompt user with basic programming questions based on the python language.
+
+    :postcondition: validate user input and check if answer is correct
+    :return: 2 in string form if user choice is 2 or else return None
+    :raises ValueError: if user input is not an integer between 1 and 4 inclusive
+    """
     user_answer = input("What is a closure in Python?\n"
                         "1: A feature that closes a file after its execution\n"
                         "2: A function that remembers the environment in which it was created\n"
@@ -114,6 +184,13 @@ def ask_quiz_week_ten():
 
 
 def ask_bonus_quiz():
+    """
+    Prompt user with basic programming questions based on the python language.
+
+    :postcondition: validate user input and check if answer is correct
+    :return: 1 in string form if user choice is 1 or else return None
+    :raises ValueError: if user input is not an integer between 1 and 4 inclusive
+    """
     user_answer = input("Bonus question!!\nChris is a good teacher\n1: True\n2: False\n")
     if user_answer not in ["1", "2"]:
         raise ValueError("Please answer with number between 1 and 2")

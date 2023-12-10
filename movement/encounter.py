@@ -6,7 +6,6 @@ A01366848
 """
 
 import random
-from quiz import quiz_comp_1510
 
 
 def check_encounter():
