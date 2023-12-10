@@ -8,9 +8,9 @@ import random
 
 
 def determine_turn_order(character, foe):
-    if character["status"]["typing_speed"]["value"] > foe["status"]["typing_speed"]:
+    if character["status"]["typing_speed"]["value"] > foe["status"]["typing_speed"]["value"]:
         return character
-    elif character["status"]["typing_speed"]["value"] == foe["status"]["typing_speed"]:
+    elif character["status"]["typing_speed"]["value"] == foe["status"]["typing_speed"]["value"]:
         return random.choice([character, foe])
     else:
         return foe

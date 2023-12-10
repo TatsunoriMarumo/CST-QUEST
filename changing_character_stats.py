@@ -9,7 +9,7 @@ import random
 
 def calculate_damage(attacking, attack_type, defending):
     attack_stat = attacking["status"]["intelligence"]["value"]
-    block_stat = defending["status"]["mentality"]["value"]
+    block_stat = defending["status"]["mental_fortitude"]["value"]
     if attack_type == "heavy_attack":
         true_damage = random.choice(range(round(attack_stat * 0.8), round(attack_stat * 1.2))) - block_stat
         return true_damage
@@ -19,7 +19,7 @@ def calculate_damage(attacking, attack_type, defending):
 
 
 def calculate_hp_loss(defending, true_damage):
-    defending["stats"]["current_hp"] -= true_damage
+    defending["status"]["current_hp"] -= true_damage
 
 
 def display_damage(character, true_damage):
