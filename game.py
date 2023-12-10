@@ -59,7 +59,9 @@ def game():
             break
 
         if character["level"] == 6:
+            final_grade = level_up.calculate_grade(character)
             delayed_print(f"Congratuations!!\n {character['name']} has cleared the game!!\n"
+                          f"{character['name']}'s final grade was '{final_grade}'"
                           f"Thank you for playing!")
         instance_display.display_board(game_map, character)
         instance_display.display_character_details(character)

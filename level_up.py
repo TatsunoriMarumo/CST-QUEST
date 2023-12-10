@@ -101,6 +101,19 @@ def change_level(character):
         delayed_print(f"Congratulations!\nNow {character['name']} became a {character['job']}!")
 
 
+def calculate_grade(character):
+    if character["status"]["intelligence"]["value"] >= 25:
+        return "A"
+    elif character["status"]["intelligence"]["value"] >= 23:
+        return "B"
+    elif character["status"]["intelligence"]["value"] >= 21:
+        return "C"
+    elif character["status"]["intelligence"]["value"] >= 19:
+        return "D"
+    else:
+        return "E"
+
+
 def main():
     pass
 
