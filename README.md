@@ -24,4 +24,6 @@ Ephraim: ephraimbcit
 
 REPLACE THIS LINE WITH ANY COMMENTS
 
-{name: 0, class: job, status: {attack: 0, def: 0, HP: 0, exp: 0}, level: 1, coordinates: (0, 0), inventory: [000]}
+Our game is not functional. Tats and I were running into a module bug that broke our whole logic, ultimately we
+tried to refactor our entire codebase and were unsuccessful. We just wanted to apologize in advance for the poor
+product.
