@@ -162,6 +162,12 @@ def ask_quiz(quiz):
             print("{}".format(str(e)), file=sys.stderr)
 
 
+def run_quiz(character):
+    answer = ask_quiz(pick_quiz)
+    check_answer(character, answer)
+    display_result(answer)
+
+
 def main():
     pass
 
