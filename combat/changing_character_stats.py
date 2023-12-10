@@ -22,9 +22,10 @@ def calculate_hp_loss(defending, true_damage):
     defending["stats"]["current_hp"] -= true_damage
 
 
-def display_damage(true_damage):
+def display_damage(character, true_damage):
     if true_damage > 0:
-        print(f"You got {true_damage} damage!")
+        print(f"{character['name']} got {true_damage} damage!")
+        print(f"{character['name']}'s HP is now {character['status']['current_hp']}/{character['status']['max_hp']}")
     else:
         print("Attack was blocked!")
 
@@ -42,7 +43,7 @@ def heal_character_with_item(character, item):
 
 
 def heal_character_with_block(character):
-    character[f"status"][f"current_hp"] += 2
+    character[f"status"][f"current_hp"] += character["status"]["mentality"]["value"]
 
 
 def decrement_buff_count(character_instance):
