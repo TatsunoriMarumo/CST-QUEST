@@ -28,6 +28,8 @@ def run_combat(character):
             player_choice_skill = actions.get_user_skill_choice(character)
             if player_choice_skill == str(len(character["skills"]) + 1):
                 player_action = actions.determine_player_attack_type()
+            elif player_choice_skill == str(len(character["skills"])):
+                print(f"{character['name']} uses {character['skills'][player_choice_skill]}!!")
         first_turn = actions.determine_turn_order(character, foe)
         if first_turn == character:
             if player_action == "block":
