@@ -216,7 +216,7 @@ def pick_quiz():
 
     copy_quiz_list = quiz_list.copy()
 
-    if quiz_list:
+    if copy_quiz_list:
         index = random.randint(0, len(copy_quiz_list) - 1)
         return copy_quiz_list.pop(index)
     else:
