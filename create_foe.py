@@ -16,8 +16,8 @@ def create_foe_year_one():
     :return: a dictionary representing a foe
     """
     return {"name": "year 1 Burnaby campus student",
-            "status": {"current_hp": 1, "max_hp": 10, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
-                      "typing_speed": {"value": 5}, "luck": {"value": 5}, "exp": 1}}
+            "status": {"current_hp": 3, "max_hp": 5, "intelligence": {"value": 3}, "mental_fortitude": {"value": 1},
+                       "typing_speed": {"value": 3}, "luck": {"value": 1}, "exp": 1}}
 
 
 def create_foe_year_two():
@@ -28,8 +28,8 @@ def create_foe_year_two():
     :return: a dictionary representing a foe
     """
     return {"name": "year 2 Burnaby campus student",
-            "status": {"current_hp": 3, "max_hp": 10, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
-                      "typing_speed": {"value": 5}, "luck": {"value": 5}, "exp": 3}}
+            "status": {"current_hp": 5, "max_hp": 7, "intelligence": {"value": 5}, "mental_fortitude": {"value": 3},
+                       "typing_speed": {"value": 5}, "luck": {"value": 3}, "exp": 3}}
 
 
 def create_foe_international():
@@ -40,8 +40,8 @@ def create_foe_international():
     :return: a dictionary representing a foe
     """
     return {"name": "international Burnaby campus student",
-            "status": {"current_hp": 5, "max_hp": 11, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
-                      "typing_speed": {"value": 5}, "luck": {"value": 5}, "exp": 5}}
+            "status": {"current_hp": 7, "max_hp": 11, "intelligence": {"value": 7}, "mental_fortitude": {"value": 5},
+                       "typing_speed": {"value": 7}, "luck": {"value": 5}, "exp": 5}}
 
 
 def create_foe_elite():
@@ -52,8 +52,8 @@ def create_foe_elite():
     :return: a dictionary representing a foe
     """
     return {"name": "elite Burnaby campus student",
-            "status": {"current_hp": 7, "max_hp": 12, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
-                      "typing_speed": {"value": 5}, "luck": {"value": 5}, "exp": 7}}
+            "status": {"current_hp": 11, "max_hp": 13, "intelligence": {"value": 11}, "mental_fortitude": {"value": 7},
+                       "typing_speed": {"value": 11}, "luck": {"value": 7}, "exp": 7}}
 
 
 def create_foe_set_rep():
@@ -64,8 +64,8 @@ def create_foe_set_rep():
     :return: a dictionary representing a foe
     """
     return {"name": "Burnaby campus set rep",
-            "status": {"current_hp": 10, "max_hp": 15, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
-                      "typing_speed": {"value": 5}, "luck": {"value": 5}, "exp": 10}}
+            "status": {"current_hp": 13, "max_hp": 17, "intelligence": {"value": 13}, "mental_fortitude": {"value": 11},
+                       "typing_speed": {"value": 13}, "luck": {"value": 11}, "exp": 11}}
 
 
 def create_foe_graduate():
@@ -76,8 +76,8 @@ def create_foe_graduate():
     :return: a dictionary representing a foe
     """
     return {"name": "Burnaby campus graduate",
-            "status": {"current_hp": 13, "max_hp": 18, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
-                      "typing_speed": {"value": 5}, "luck": {"value": 5}, "exp": 13}}
+            "status": {"current_hp": 17, "max_hp": 19, "intelligence": {"value": 17}, "mental_fortitude": {"value": 13},
+                       "typing_speed": {"value": 17}, "luck": {"value": 13}, "exp": 13}}
 
 
 def create_boss_julian():
@@ -88,8 +88,8 @@ def create_boss_julian():
     :return: a dictionary representing a boss
     """
     return {"name": "Julian",
-            "status": {"current_hp": 3, "max_hp": 20, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
-                      "typing_speed": {"value": 5}, "luck": {"value": 5}}}
+            "status": {"current_hp": 3, "max_hp": 7, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
+                       "typing_speed": {"value": 5}, "luck": {"value": 5}}}
 
 
 def create_boss_sam():
@@ -100,8 +100,8 @@ def create_boss_sam():
     :return: a dictionary representing a boss
     """
     return {"name": "Sam",
-            "status": {"current_hp": 5, "max_hp": 20, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
-                      "typing_speed": {"value": 5}, "luck": {"value": 5}}}
+            "status": {"current_hp": 7, "max_hp": 11, "intelligence": {"value": 7}, "mental_fortitude": {"value": 5},
+                       "typing_speed": {"value": 7}, "luck": {"value": 5}}}
 
 
 def create_boss_hoda():
@@ -112,8 +112,8 @@ def create_boss_hoda():
     :return: a dictionary representing a boss
     """
     return {"name": "Hoda",
-            "status": {"current_hp": 7, "max_hp": 20, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
-                      "typing_speed": {"value": 5}, "luck": {"value": 5}}}
+            "status": {"current_hp": 11, "max_hp": 13, "intelligence": {"value": 11}, "mental_fortitude": {"value": 7},
+                       "typing_speed": {"value": 11}, "luck": {"value": 5}}}
 
 
 def create_boss_nabil():
@@ -124,8 +124,8 @@ def create_boss_nabil():
     :return: a dictionary representing a boss
     """
     return {"name": "Nabil",
-            "status": {"current_hp": 11, "max_hp": 20, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
-                      "typing_speed": {"value": 5}, "luck": {"value": 5}}}
+            "status": {"current_hp": 13, "max_hp": 17, "intelligence": {"value": 13}, "mental_fortitude": {"value": 11},
+                       "typing_speed": {"value": 13}, "luck": {"value": 7}}}
 
 
 def create_boss_maryam():
@@ -136,8 +136,8 @@ def create_boss_maryam():
     :return: a dictionary representing a boss
     """
     return {"name": "Maryam",
-            "status": {"current_hp": 13, "max_hp": 20, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
-                      "typing_speed": {"value": 5}, "luck": {"value": 5}}}
+            "status": {"current_hp": 17, "max_hp": 19, "intelligence": {"value": 17}, "mental_fortitude": {"value": 13},
+                       "typing_speed": {"value": 15}, "luck": {"value": 11}}}
 
 
 def create_boss_chris():
@@ -148,8 +148,8 @@ def create_boss_chris():
     :return: a dictionary representing a boss
     """
     return {"name": "Chris",
-            "status": {"current_hp": 17, "max_hp": 30, "intelligence": {"value": 5}, "mental_fortitude": {"value": 5},
-                      "typing_speed": {"value": 5}, "luck": {"value": 5}}}
+            "status": {"current_hp": 19, "max_hp": 23, "intelligence": {"value": 23}, "mental_fortitude": {"value": 17},
+                       "typing_speed": {"value": 19}, "luck": {"value": 13}}}
 
 
 def assign_foe(character):
