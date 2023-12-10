@@ -1,8 +1,32 @@
 """
 Tatsunori Marumo
 A01327744
+Ephraim Hsu
+A01366848
 """
 import copy
+
+
+def get_user_choice():
+    """
+    Prompts the player to choose direction.
+
+    Prompts the player to choose a cardinal direction.
+
+    :postcondition: valiate player's chosen cardinal direction
+    :return: a string representing the player's chosen cardinal direction
+    :raises ValueError: if player's input is not valid
+    """
+    movements = {"1": "north", "2": "east", "3": "south", "4": "west",
+                 "n": "north", "e": "east", "s": "south", "w": "west",
+                 "north": "north", "east": "east", "south": "south", "west": "west"}
+
+    while True:
+        user_choice = input("Where do you wish to go?\n1: North\n2: East\n3: South\n4: West\n").strip().lower()
+        try:
+            return movements[user_choice]
+        except KeyError:
+            raise ValueError("Invalid input\nTry again")
 
 
 def validate_move(board, character, direction):
@@ -38,10 +62,19 @@ def validate_move(board, character, direction):
     return (copy_character["coordinates"][0], copy_character["coordinates"][1]) in board
 
 
-def main():
-    pass
+def move_character(character, user_choice):
+    """
 
-
-if __name__ == '__main__':
-    main()
-
+    :param character:
+    :param user_choice:
+    :return:
+    """
+    if user_choice == "north":
+        character["coordinates"][0] += -1
+    elif user_choice == "south":
+        character["coordinates"][0] += 1
+    elif user_choice == "east":
+        character["coordinates"][1] += 1
+    else:
+        character["coordinates"][1] += -1
+    return character
