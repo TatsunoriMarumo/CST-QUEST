@@ -49,9 +49,20 @@ def game():
             else:
                 print("This room seems to be empty...")
         if level_up.check_level_up(character):
-            fights.combat_with_boss(character)
+            boss_battle = fights.combat_with_boss(character)
+            if boss_battle:
+                level_up.change_level(character)
+
         if changing_character_stats.check_death(character):
             print(f"Game over\n{character['name']} failed the course...")
+            break
+
+        if character["level"] == 6:
+            print(f"Congratuations!!\n {character['name']} has cleared the game!!\n"
+                  f"Thank you for playing!")
+        instance_display.display_board(game_map, character)
+        instance_display.display_character_details(character)
+        instance_display.display_character_stats(character)
 
 
 def main():

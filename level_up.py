@@ -94,7 +94,9 @@ def change_level(character):
         print(f"you have leveled up!\nYou became level{character['level']}!")
         increase_status(character)
         add_skill(character)
+        print(f"Wow! {character['name']} has learned {character['skills'][character['level']]}!")
         change_job(character)
+        print(f"Congratulations!\nNow {character['name']} became a {character['job']}!")
 
 
 def main():

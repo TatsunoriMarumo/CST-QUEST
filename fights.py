@@ -16,7 +16,14 @@ def run_combat(character):
     while True:
         player_action = actions.determine_player_attack_type()
         foe_action = actions.determine_foe_action(foe)
-        if player_action == "skill":
+        if player_action == "run away":
+            if actions.check_run_away(character, foe):
+                print(f"{character['name']} has run away from {foe['name']}!")
+                break
+            else:
+                print(f"{character['name']} failed to run away\nFace reality...")
+
+        elif player_action == "skill":
             actions.display_skills(character)
             player_choice_skill = actions.get_user_skill_choice(character)
             if player_choice_skill == str(len(character["skills"]) + 1):
@@ -26,7 +33,7 @@ def run_combat(character):
             if player_action == "block":
                 actions.display_action(character, player_action)
                 changing_character_stats.heal_character_with_block(character)
-            else:
+            elif player_action in ["light_attack", "heavy_attack", "skill"]:
                 actions.display_action(character, player_action)
                 damage = changing_character_stats.calculate_damage(character, player_action, foe)
                 changing_character_stats.calculate_hp_loss(foe, damage)
@@ -67,7 +74,7 @@ def run_combat(character):
             if player_action == "block":
                 actions.display_action(character, player_action)
                 changing_character_stats.heal_character_with_block(character)
-            else:
+            elif player_action in ["light_attack", "heavy_attack", "skill"]:
                 actions.display_action(character, player_action)
                 damage = changing_character_stats.calculate_damage(character, player_action, foe)
                 changing_character_stats.calculate_hp_loss(foe, damage)
@@ -87,9 +94,13 @@ def combat_with_boss(character):
     while True:
         player_action = actions.determine_player_attack_type()
         boss_action = actions.determine_foe_action(boss)
-        if player_action == "skill":
+        if player_action == "run away":
+            print(f"You cannot run away from {boss['name']}!")
+
+        elif player_action == "skill":
             actions.display_skills(character)
             player_choice_skill = actions.get_user_skill_choice(character)
+
             if player_choice_skill == str(len(character["skills"]) + 1):
                 player_action = actions.determine_player_attack_type()
         first_turn = actions.determine_turn_order(character, boss)
@@ -97,7 +108,7 @@ def combat_with_boss(character):
             if player_action == "block":
                 actions.display_action(character, player_action)
                 changing_character_stats.heal_character_with_block(character)
-            else:
+            elif player_action in ["light_attack", "heavy_attack", "skill"]:
                 actions.display_action(character, player_action)
                 damage = changing_character_stats.calculate_damage(character, player_action, boss)
                 changing_character_stats.calculate_hp_loss(boss, damage)
@@ -133,18 +144,18 @@ def combat_with_boss(character):
 
             if changing_character_stats.check_death(character):
                 print("You died")
-                break
+                return False
 
             if player_action == "block":
                 actions.display_action(character, player_action)
                 changing_character_stats.heal_character_with_block(character)
-            else:
+            elif player_action in ["light_attack", "heavy_attack", "skill"]:
                 actions.display_action(character, player_action)
                 damage = changing_character_stats.calculate_damage(character, player_action, boss)
                 changing_character_stats.calculate_hp_loss(boss, damage)
                 changing_character_stats.display_damage(boss, damage)
 
             if changing_character_stats.check_death(boss):
-                print(f"You win!")
-                break
+                print(f"You win!\n Congratulations! {character['name']} has passed level {character['level']} course!")
+                return True
     return

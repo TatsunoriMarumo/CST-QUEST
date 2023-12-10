@@ -24,7 +24,7 @@ def display_character_details(character):
     print(f"\nCharacter Class: {character_class}\nCharacter Job: {character_job}\n"
           f"Character Level: {character_level}\nCharacter Experience: {character_experience}")
     for key, value in character["skills"].items():
-        print(f"{key}: {value}")
+        print(f"skill {key}: {value}")
 
 
 def display_character_stats(character):

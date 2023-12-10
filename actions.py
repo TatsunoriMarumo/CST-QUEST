@@ -42,8 +42,7 @@ def display_action(character, action):
 
 
 def determine_player_attack_type():
-    possible_player_actions = {"1": "light_attack", "2": "heavy_attack", "3": "block", "4": "skill", "5": "item",
-                               "6": "run away"}
+    possible_player_actions = {"1": "light_attack", "2": "heavy_attack", "3": "block", "4": "skill", "5": "run away"}
     while True:
         try:
             player_action = input(f"What action would you like to perform? "
@@ -76,7 +75,7 @@ def get_user_skill_choice(character):
     display_skills(character)
     while True:
         try:
-            user_input = input("\n").strip()
+            user_input = input().strip()
             skills_list = [key for key in character["skills"]]
             skills_list.append(str(len(skills_list) + 1))
             if user_input not in skills_list:
@@ -84,3 +83,12 @@ def get_user_skill_choice(character):
             return user_input
         except ValueError as e:
             print(f"{str(e)}", file=sys.stderr)
+
+
+def check_run_away(character, foe):
+    if foe["name"] in ["Julian", "Chris", "Sam", "Hoda", "Maryam", "Nabil"]:
+        return False
+    elif character["status"]["typing_speed"]["value"] > foe["status"]["typing_speed"]["value"]:
+        return True
+    else:
+        return random.randint(1, 2) == 1
