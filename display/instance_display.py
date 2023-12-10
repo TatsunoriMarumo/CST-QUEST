@@ -79,7 +79,17 @@ def display_board(game_board, character):
         print()
 
 
-def describe_room(character, game_board):
+def describe_room(game_board, character):
+    """
+    Print a description of a room.
+
+    Print
+    :param game_board:
+    :param character:
+    :preconditio
+    :postcondition:
+    :return: None
+    """
     room_descriptions_pool = {0: "placeholder", 1: "placeholder", 2: "placeholder", 3: "placeholder", 4: "placeholder"}
     room_key = game_board[character["coordinates"]]
     print(room_descriptions_pool[room_key])
