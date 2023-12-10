@@ -226,6 +226,17 @@ def pick_quiz():
 
 
 def check_answer(character, answer):
+    """
+    Change character's intelligence stat.
+
+    Change character's intelligence stat based on if their answer to the quiz is correct.
+
+    :param character: a dictionary with key-value pairs() representing character details
+    :param answer: a Boolean value
+    :precondition character: must be a dictionary with key-value pairs() representing character details
+    :precondition answer: must be a Boolean value
+    :return: None
+    """
     if answer:
         character["status"]["intelligence"]["value"] += 1
     else:
