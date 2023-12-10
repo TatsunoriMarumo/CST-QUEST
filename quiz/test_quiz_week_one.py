@@ -18,5 +18,23 @@ class Test(TestCase):
     @patch("builtins.input", side_effect="1")
     def test_ask_quiz_week_one_valid_input_one(self, _):
         actual = ask_quiz_week_one()
-        expected = None
+        expected = False
+        self.assertEqual(actual, expected)
+
+    @patch("builtins.input", side_effect="2")
+    def test_ask_quiz_week_one_valid_input_two(self, _):
+        actual = ask_quiz_week_one()
+        expected = False
+        self.assertEqual(actual, expected)
+
+    @patch("builtins.input", side_effect="3")
+    def test_ask_quiz_week_one_valid_input_three(self, _):
+        actual = ask_quiz_week_one()
+        expected = False
+        self.assertEqual(actual, expected)
+
+    @patch("builtins.input", side_effect="4")
+    def test_ask_quiz_week_one_valid_input_four(self, _):
+        actual = ask_quiz_week_one()
+        expected = True
         self.assertEqual(actual, expected)
