@@ -10,6 +10,14 @@ from quiz import quiz_comp_1510
 
 
 def check_encounter():
+    """
+    Determine if player will encounter something.
+
+    Determine if the player will encounter something after moving rooms, chance for an encounter is 50%.
+
+    :postcondition: Determine if player will encounter something
+    :return: None or 1
+    """
     encounter_possibility = 2
     numbers = [number for number in range(encounter_possibility)]
     return random.choice(numbers) == 1
