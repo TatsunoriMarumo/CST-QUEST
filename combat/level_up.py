@@ -33,6 +33,17 @@ def change_job(character):
     return
 
 
+def increase_status(character):
+    increase_amount = character["level"]
+    for key, value in character["status"].items():
+        if isinstance(value, dict):
+            for sub_key, sub_value in value.items():
+                if sub_key != "turn_count":
+                    character["status"][key][sub_key] += increase_amount
+        elif key in ["max_hp", "current_hp"]:
+            character["status"][key] += increase_amount
+
+
 def add_skill(character: dict):
     character_level = character["level"]
     character_class = character["class"]

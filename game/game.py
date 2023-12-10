@@ -6,7 +6,7 @@ A01366848
 """
 
 from combat import actions, changing_character_stats, inventory, level_up
-from creation import character_creation, game_board, foe
+from creation import character_creation, game_board, create_foe
 from display import instance_display, introduce_story
 from movement import character_movement, encounter
 from quiz import quiz_comp_1510

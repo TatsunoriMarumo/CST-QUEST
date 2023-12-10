@@ -5,7 +5,7 @@ Ephraim Hsu
 A01366848
 """
 from unittest import TestCase
-from foe import create_foe
+from create_foe import create_foe
 
 
 class Test(TestCase):
