@@ -18,16 +18,10 @@ def calculate_damage(attacking, attack_type, defending):
         true_damage = random.choice(range(attack_stat - 2, attack_stat + 2))
         return true_damage
     else:
-        skill = calculate_skill(attacking, attack_type)
-        true_damage = ((attacking["status"]["luck"]["value"] + random.randint((0 - int(skill)), int(skill)))
-                       - (defending["status"]["luck"]["value"] + random.randint((0 - int(skill)), int(skill))))
+        skill = attacking["level"]
+        true_damage = ((attacking["status"]["luck"]["value"] + random.randint((0 - skill), skill)
+                       - (defending["status"]["luck"]["value"] + random.randint((0 - skill), skill))))
         return true_damage
-
-
-def calculate_skill(character, attack_type):
-    for key, value in character["skills"].items():
-        if value == attack_type:
-            return key
 
 
 def calculate_hp_loss(defending, true_damage):
