@@ -245,6 +245,13 @@ def check_answer(character, answer):
 
 
 def display_result(answer):
+    """
+    Notify the user about their intelligence stat changing.
+
+    :param answer: is a Boolean value
+    :postcondition: print a message notifying the user of an increase or a decrease in the intelligence stat
+    :return: None
+    """
     if answer:
         return print(f"{answer}: Your intelligence has increased by 1")
     else:
