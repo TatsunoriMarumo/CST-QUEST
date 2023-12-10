@@ -259,6 +259,14 @@ def display_result(answer):
 
 
 def ask_quiz(quiz):
+    """
+    Execute a quiz function.
+
+    :param quiz: a function that simulates a simple quiz through the console
+    :preconditon: quiz function must work
+    :postcondition: invoke the quiz function
+    :return: invoking the function
+    """
     while True:
         try:
             return quiz()
