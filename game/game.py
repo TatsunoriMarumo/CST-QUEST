@@ -34,7 +34,10 @@ def game():
 
         if encounter.check_encounter():
             encounter_type = encounter.check_encounter_type()
-            encounter.implement_encounter(encounter_type, quiz_comp_1510.run_quiz, quiz_comp_1510.run_quiz, quiz_comp_1510.run_quiz)
+            if encounter_type == "quiz":
+                quiz_comp_1510.run_quiz(character)
+            else:
+                continue
 
 
 def main():

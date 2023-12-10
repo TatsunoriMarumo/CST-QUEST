@@ -6,6 +6,7 @@ A01366848
 """
 
 import random
+from quiz import quiz_comp_1510
 
 
 def check_encounter():
@@ -23,10 +24,10 @@ def check_encounter_type():
     else:
         return "random_event"
 
-
-def implement_encounter(encounter_type, character,combat, quiz, random_event):
-    encounter_dict = {"combat": combat(), "quiz": quiz, "random_event": random_event}
-    return encounter_dict[encounter_type]()
+#
+# def implement_encounter(encounter_type, character, combat, quiz, random_event):
+#     encounter_dict = {"combat": combat(), "quiz": quiz, "random_event": random_event}
+#     return encounter_dict[encounter_type]()
 
 
 def main():

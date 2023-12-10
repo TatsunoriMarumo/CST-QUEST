@@ -141,9 +141,9 @@ def pick_quiz():
 
 def check_answer(character, answer):
     if answer:
-        character["status"]["intelligence"] += 1
+        character["status"]["intelligence"]["value"] += 1
     else:
-        character["status"]["intelligence"] -= 1
+        character["status"]["intelligence"]["value"] -= 1
     return
 
 
