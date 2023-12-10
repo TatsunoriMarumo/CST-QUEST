@@ -128,8 +128,8 @@ def combat_with_boss(character):
             else:
                 actions.display_action(boss, boss_action)
                 damage = changing_character_stats.calculate_damage(boss, boss_action, character)
-                changing_character_stats.calculate_hp_loss(boss, damage)
-                changing_character_stats.display_damage(boss, damage)
+                changing_character_stats.calculate_hp_loss(character, damage)
+                changing_character_stats.display_damage(character, damage)
 
             if changing_character_stats.check_death(character):
                 delayed_print("You died")

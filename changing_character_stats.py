@@ -12,10 +12,10 @@ def calculate_damage(attacking, attack_type, defending):
     attack_stat = attacking["status"]["intelligence"]["value"]
     block_stat = defending["status"]["mental_fortitude"]["value"]
     if attack_type == "heavy_attack":
-        true_damage = random.choice(range(round(attack_stat * 0.8), round(attack_stat * 1.2))) - block_stat
+        true_damage = random.choice(range(round(attack_stat * 0.8), round(attack_stat * 1.2) + 1)) - block_stat
         return true_damage
     elif attack_type == "light_attack":
-        true_damage = random.choice(range(attack_stat - 2, attack_stat + 2))
+        true_damage = random.choice(range(attack_stat - 2, attack_stat + 3))
         return true_damage
     else:
         skill = attacking["level"]
