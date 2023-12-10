@@ -84,24 +84,24 @@ def assign_character_starting_stats(character, character_class):
                 'luck': {'value': 7, 'turn_count': 0}}}
     """
     if character_class == "front_end_developer":
-        character["status"] = {"max_hp": 10, "current_hp": 10,
-                               "intelligence": 5,
-                               "mental_fortitude": 5,
-                               "typing_speed": 10,
-                               "luck": 5}
+        character["status"] = {"max_hp": 11, "current_hp": 10,
+                               "intelligence": {"value": 7, "turn_count": 0},
+                               "mental_fortitude": {"value": 7, "turn_count": 0},
+                               "typing_speed": {"value": 7, "turn_count": 0},
+                               "luck": {"value": 7, "turn_count": 0}}
 
     elif character_class == "back_end_developer":
-        character["status"] = {"max_hp": 10, "current_hp": 10,
-                               "intelligence": 10,
-                               "mental_fortitude": 5,
-                               "typing_speed": 5,
-                               "luck": 5}
+        character["status"] = {"max_hp": 12, "current_hp": 10,
+                               "intelligence": {"value": 7, "turn_count": 0},
+                               "mental_fortitude": {"value": 7, "turn_count": 0},
+                               "typing_speed": {"value": 7, "turn_count": 0},
+                               "luck": {"value": 7, "turn_count": 0}}
     else:
-        character["status"] = {"max_hp": 10, "current_hp": 10,
-                               "intelligence": 7,
-                               "mental_fortitude": 7,
-                               "typing_speed": 7,
-                               "luck": 7}
+        character["status"] = {"max_hp": 13, "current_hp": 10,
+                               "intelligence": {"value": 7, "turn_count": 0},
+                               "mental_fortitude": {"value": 7, "turn_count": 0},
+                               "typing_speed": {"value": 7, "turn_count": 0},
+                               "luck": {"value": 7, "turn_count": 0}}
     return character
 
 
@@ -123,7 +123,7 @@ def create_character():
             user_class = get_class()
             character = {"name": user_name, "class": user_class, "job": "struggling student", "level": 1, "exp": 0,
                          "status": None, "coordinates": [0, 0],
-                         "inventory": []}
+                         "inventory": [], "skills": []}
             assign_character_starting_stats(character, user_class)
             return character
 
