@@ -240,12 +240,14 @@ def check_answer(character, answer):
     """
     if answer:
         character["status"]["intelligence"]["value"] += 1
+        character["exp"] += 1
     else:
         character["status"]["intelligence"]["value"] -= 1
+        character["exp"] -= 1
     return
 
 
-def display_result(answer):
+def display_result(character, answer):
     """
     Notify the user about their intelligence stat changing.
 
@@ -254,9 +256,9 @@ def display_result(answer):
     :return: None
     """
     if answer:
-        return delayed_print(f"{answer}: Your intelligence has increased by 1")
+        return delayed_print(f"{answer}: {character['name']}'s intelligence and exp have increased by 1")
     else:
-        return delayed_print(f"{answer}: Your intelligence has decreased by 1")
+        return delayed_print(f"{answer}: {character['name']} intelligence and exp have decreased by 1")
 
 
 def ask_quiz(quiz):
@@ -286,7 +288,7 @@ def run_quiz(character):
     delayed_print("QUIZ!!")
     answer = ask_quiz(pick_quiz())
     check_answer(character, answer)
-    display_result(answer)
+    display_result(character, answer)
 
 
 def main():
