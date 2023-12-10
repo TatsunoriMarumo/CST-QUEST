@@ -170,8 +170,6 @@ def assign_foe(character):
         return random.choice([foe_level_three, foe_level_four, foe_level_five])
     elif character["level"] == 5:
         return random.choice([foe_level_four, foe_level_five, foe_level_six])
-    else:
-        return random.choice([foe_level_five, foe_level_six])
 
 
 def assign_boss(character):
@@ -180,9 +178,7 @@ def assign_boss(character):
     boss_level_three = create_boss_hoda()
     boss_level_four = create_boss_nabil()
     boss_level_five = create_boss_maryam()
-    boss_level_six = create_boss_chris()
 
-    boss = {1: boss_level_one, 2: boss_level_two, 3: boss_level_three, 4: boss_level_four, 5: boss_level_five,
-            6: boss_level_six}
+    boss = {1: boss_level_one, 2: boss_level_two, 3: boss_level_three, 4: boss_level_four, 5: boss_level_five}
 
     return boss[character["level"]]
