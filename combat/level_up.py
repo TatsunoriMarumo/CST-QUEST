@@ -88,6 +88,15 @@ def add_skill(character: dict):
             character["skills"]["6"] = "implement API"
 
 
+def change_level(character):
+    if check_level_up(character):
+        level_up(character)
+        print(f"you have leveled up!\nYou became level{character['level']}!")
+        increase_status(character)
+        add_skill(character)
+        change_job(character)
+
+
 def main():
     pass
 
