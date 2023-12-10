@@ -85,19 +85,35 @@ def describe_room(game_board, character):
 
     Print a description of a room that the player has just entered.
 
-    :param game_board: a dictionary
-    :param character:
-    :precondition:
-    :postcondition:
+    :param game_board: is a dictionary with key-value pairs of coordinates and an int
+    :param character: is a dictionary with key-value pairs that represent character details
+    :precondition game_board: must be a dictionary with key-value pairs of coordinates and an int
+    :precondition character: must be a dictionary with key-value pairs that represent character details
+    :postcondition: print a brief description of the room player has entered
     :return: None
     """
-    room_descriptions_pool = {0: "placeholder", 1: "placeholder", 2: "placeholder", 3: "placeholder", 4: "placeholder"}
+    room_descriptions_pool = {0: "You enter into a room that is brightly lit and sterile. Large monitors "
+                                 "periodically decorate the wall along with pods of desks and chair.\nVery strange, "
+                                 "why would there be a classroom modeled after your BCIT downtown campus room 645 "
+                                 "in a foreign realm, within a dungeon no less.\nYou're so curious you decide to "
+                                 "press on and explore.",
+                              1: "You cautiously enter a old and musty lecture hall. Wait a second, this looks just "
+                                 "like the archaic lecture hall where your BCIT orientation was held.\nYou think back "
+                                 "to a time long long ago when you were once a CST Term 1 fledgling, and how glad you "
+                                 "were that you managed to get into the downtown campus.",
+                              2: "All of a sudden you are magically thrust into a room lined with brick walls, a "
+                                 "handful of dimly lit torches, and moss.\nNow this is what a dungeon should look like,"
+                                 " just kidding, before you can get too excited about being in a real dungeon the\n"
+                                 "holograms and reflective screens turn off and you find yourself in the BCIT "
+                                 "downtown campus Tech Hub",
+                              3: "You enter into what looks like a normal dungeon room.",
+                              4: "You cautiously enter a room that is pitch black"}
     room_key = game_board[character["coordinates"][0], character["coordinates"][1]]
     print(room_descriptions_pool[room_key])
 
 
 def main():
-    display_board(create_board(), create_character())
+    pass
 
 
 if __name__ == "__main__":
