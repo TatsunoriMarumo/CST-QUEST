@@ -83,15 +83,16 @@ def describe_room(game_board, character):
     """
     Print a description of a room.
 
-    Print
-    :param game_board:
+    Print a description of a room that the player has just entered.
+
+    :param game_board: a dictionary
     :param character:
-    :preconditio
+    :precondition:
     :postcondition:
     :return: None
     """
     room_descriptions_pool = {0: "placeholder", 1: "placeholder", 2: "placeholder", 3: "placeholder", 4: "placeholder"}
-    room_key = game_board[character["coordinates"]]
+    room_key = game_board[character["coordinates"][0], character["coordinates"][1]]
     print(room_descriptions_pool[room_key])
 
 
