@@ -24,9 +24,9 @@ def check_encounter_type():
         return "random_event"
 
 
-def implement_encounter(encounter_type, combat, quiz, random_event):
-    encounter_dict = {"combat": combat, "quiz": quiz, "random_event": random_event}
-    return encounter_dict[encounter_type]
+def implement_encounter(encounter_type, character,combat, quiz, random_event):
+    encounter_dict = {"combat": combat(), "quiz": quiz, "random_event": random_event}
+    return encounter_dict[encounter_type]()
 
 
 def main():

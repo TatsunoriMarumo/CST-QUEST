@@ -26,7 +26,7 @@ def get_user_choice():
         try:
             return movements[user_choice]
         except KeyError:
-            print("Invalid input\nTry again")
+            raise ValueError("Invalid input\nTry again")
 
 
 def main():

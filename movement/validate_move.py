@@ -2,6 +2,7 @@
 Tatsunori Marumo
 A01327744
 """
+import copy
 
 
 def validate_move(board, character, direction):
@@ -20,18 +21,21 @@ def validate_move(board, character, direction):
     :return: True if user does not cross the boundaries of the game board, False if user does so
     """
 
-    location = {"X-coordinate": character["coordinates"][0], "Y-coordinate": character["coordinates"][1]}
+    copy_character = copy.deepcopy(character)
 
-    if direction == "north" and location["Y-coordinate"] == 0:
-        return False
-    elif direction == "west" and location["X-coordinate"] == 0:
-        return False
-    elif direction == "south" and location["Y-coordinate"] >= sorted(board.keys())[-1][1]:
-        return False
-    elif direction == "east" and location["X-coordinate"] >= sorted(board.keys())[-1][2]:
-        return False
+    if direction == "north":
+        copy_character["coordinates"][0] += -1
+    elif direction == "south":
+        copy_character["coordinates"][0] += 1
+    elif direction == "east":
+        copy_character["coordinates"][1] += 1
     else:
-        return True
+        copy_character["coordinates"][1] += -1
+
+    if not (copy_character["coordinates"][0], copy_character["coordinates"][1]) in board:
+        raise ValueError("You cannot go that way")
+
+    return (copy_character["coordinates"][0], copy_character["coordinates"][1]) in board
 
 
 def main():
