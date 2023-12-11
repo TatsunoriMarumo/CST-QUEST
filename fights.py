@@ -70,7 +70,7 @@ def run_combat(character):
                 changing_character_stats.display_damage(character, damage)
 
             if changing_character_stats.check_death(character):
-                delayed_print("You died")
+                delayed_print(f"{character['name']} lost")
                 break
 
             if player_action == "block":
@@ -129,7 +129,7 @@ def combat_with_boss(character):
                 changing_character_stats.display_damage(character, damage)
 
             if changing_character_stats.check_death(character):
-                delayed_print("You died")
+                delayed_print(f"{character['name']} lost")
                 break
 
         elif first_turn == boss:
@@ -143,7 +143,7 @@ def combat_with_boss(character):
                 changing_character_stats.display_damage(character, damage)
 
             if changing_character_stats.check_death(character):
-                delayed_print("You died")
+                delayed_print(f"{character['name']} lost")
                 return False
 
             if player_action == "block":

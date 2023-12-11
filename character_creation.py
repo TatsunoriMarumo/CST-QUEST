@@ -83,14 +83,14 @@ def assign_character_starting_stats(character, character_class):
                 'typing_speed': {'value': 7, 'turn_count': 0},
                 'luck': {'value': 7, 'turn_count': 0}}}
     """
-    if character_class == "front_end_developer":
+    if character_class == "back_end_developer":
         character["status"] = {"max_hp": 12, "current_hp": 10,
                                "intelligence": {"value": 9, "turn_count": 0},
                                "mental_fortitude": {"value": 9, "turn_count": 0},
                                "typing_speed": {"value": 5, "turn_count": 0},
                                "luck": {"value": 5, "turn_count": 0}}
 
-    elif character_class == "back_end_developer":
+    elif character_class == "front_end_developer":
         character["status"] = {"max_hp": 12, "current_hp": 10,
                                "intelligence": {"value": 5, "turn_count": 0},
                                "mental_fortitude": {"value": 5, "turn_count": 0},
