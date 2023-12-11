@@ -96,7 +96,8 @@ def change_level(character):
         delayed_print(f"you have leveled up!\nYou became level{character['level']}!")
         increase_status(character)
         add_skill(character)
-        delayed_print(f"Wow! {character['name']} has learned {character['skills'][character['level']]}!")
+        character_level = str(character["level"])
+        delayed_print(f"Wow! {character['name']} has learned {character['skills'][character_level]}!")
         change_job(character)
         delayed_print(f"Congratulations!\nNow {character['name']} became a {character['job']}!")
 

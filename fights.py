@@ -117,7 +117,7 @@ def combat_with_boss(character):
 
             if changing_character_stats.check_death(boss):
                 delayed_print(f"{character['name']} win!")
-                break
+                return True
 
             if boss_action == "block":
                 actions.display_action(boss, boss_action)
