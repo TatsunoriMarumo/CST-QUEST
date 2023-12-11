@@ -5,6 +5,8 @@ Ephraim Hsu
 A01366848
 """
 import copy
+import sys
+import instance_display
 
 
 def get_user_choice():
@@ -25,8 +27,8 @@ def get_user_choice():
         user_choice = input("Where do you wish to go?\n1: North\n2: East\n3: South\n4: West\n").strip().lower()
         try:
             return movements[user_choice]
-        except KeyError:
-            raise ValueError("Invalid input\nTry again")
+        except KeyError as e:
+            print(f"Invalid input\nTry again {str(e)}", file=sys.stderr)
 
 
 def validate_move(board, character, direction):
@@ -101,3 +103,15 @@ def validate_boss_room_level_requirement(character):
     else:
         print("Level 6 is required to fight the final boss. You are too low level.")
         return False
+
+
+def run_movement(character, game_board):
+    while True:
+        player_direction = get_user_choice()
+        try:
+            if validate_move(game_board, character, player_direction):
+                move_character(character, player_direction)
+                instance_display.describe_room(game_board, character)
+                break
+        except ValueError as e:
+            print(f"{str(e)}", file=sys.stderr)
