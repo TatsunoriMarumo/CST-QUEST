@@ -92,8 +92,8 @@ def run_combat(character):
 
 def combat_with_boss(character):
     boss = create_foe.assign_boss(character)
-    delayed_print("⚠️⚠️⚠️⚠️You have reached the required level to fight the BOSS!⚠️⚠️⚠️⚠️")
-    delayed_print(f"⚠️⚠️⚠️⚠️Battle with {boss['name']}!!⚠️⚠️⚠️⚠️")
+    delayed_print("⚠️⚠️⚠️You have reached the required level to fight the BOSS!⚠️⚠️⚠️")
+    delayed_print(f"⚠️⚠️⚠️Battle with {boss['name']}!!⚠️⚠️⚠️")
     while True:
         player_action = actions.determine_player_attack_type()
         boss_action = actions.determine_foe_action(boss)
@@ -118,8 +118,7 @@ def combat_with_boss(character):
                 changing_character_stats.display_damage(boss, damage)
 
             if changing_character_stats.check_death(boss):
-                delayed_print(f"You win!\nYou got {boss['exp']}")
-                character["exp"] += boss["exp"]
+                delayed_print(f"{character['name']} win!")
                 break
 
             if boss_action == "block":
