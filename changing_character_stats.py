@@ -14,13 +14,13 @@ def calculate_damage(attacking, attack_type, defending):
     block_stat = defending["status"]["mental_fortitude"]["value"]
     if attack_type == "heavy_attack":
         true_damage = (random.choice(range(round(attack_stat * 0.8), round(attack_stat * 1.2) + 1))
-                       - round(block_stat / 2))
+                       - round(block_stat * 0.75))
         if check_critical(attacking):
             delayed_print("critical!")
             true_damage = round(true_damage * 1.5)
         return true_damage
     elif attack_type == "light_attack":
-        true_damage = random.choice(range(attack_stat - 2, attack_stat + 3)) - round(block_stat / 2)
+        true_damage = random.choice(range(attack_stat - 2, attack_stat + 3)) - round(block_stat * 0.75)
         if check_critical(attacking):
             delayed_print("critical!")
             true_damage = round(true_damage * 1.5)
