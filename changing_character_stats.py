@@ -19,7 +19,7 @@ def calculate_damage(attacking, attack_type, defending):
             true_damage = round(true_damage * 1.5)
         return true_damage
     elif attack_type == "light_attack":
-        true_damage = random.choice(range(attack_stat - 2, attack_stat + 3))
+        true_damage = random.choice(range(attack_stat - 2, attack_stat + 3)) - block_stat
         if check_critical(attacking):
             delayed_print("critical!")
             true_damage = round(true_damage * 1.5)
@@ -59,7 +59,7 @@ def heal_character_with_item(character, item):
 
 
 def heal_character_with_block(character):
-    heal_amount = round(character["status"]["max_hp"] / 4)
+    heal_amount = round(character["status"]["max_hp"] / 2)
     hp_before_block = character["status"]["current_hp"]
     character["status"]["current_hp"] += heal_amount
     if character["status"]["max_hp"] < character["status"]["current_hp"]:
