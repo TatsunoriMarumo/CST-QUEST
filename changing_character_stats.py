@@ -65,8 +65,10 @@ def heal_character_with_block(character):
     character["status"]["current_hp"] += heal_amount
     if character["status"]["max_hp"] < character["status"]["current_hp"]:
         character["status"]["current_hp"] = character["status"]["max_hp"]
-    hp_after_block = copy.copy(character["status"]["current_hp"])
+    hp_after_block = copy.deepcopy(character["status"]["current_hp"])
     heal_amount = hp_after_block - hp_before_block
+    if heal_amount < 0:
+        heal_amount = 0
     delayed_print(f"{character['name']} has healed {heal_amount}!")
     delayed_print(f"{character['name']}'s HP is now {character['status']['current_hp']}/{character['status']['max_hp']}")
 

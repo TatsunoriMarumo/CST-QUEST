@@ -48,7 +48,7 @@ def game():
             delayed_print(f"Game over\n{character['name']} failed the course...")
             break
 
-        if character["level"] > 6:
+        if character["level"] >Tat 6:
             final_grade = level_up.calculate_grade(character)
             delayed_print(f"Congratuations!!\n {character['name']} has cleared the game!!\n"
                           f"{character['name']}'s final grade was '{final_grade}'"
