@@ -168,7 +168,7 @@ def assign_foe(character):
         return random.choice([foe_level_two, foe_level_three, foe_level_four])
     elif character["level"] == 4:
         return random.choice([foe_level_three, foe_level_four, foe_level_five])
-    elif character["level"] == 5:
+    else:
         return random.choice([foe_level_four, foe_level_five, foe_level_six])
 
 

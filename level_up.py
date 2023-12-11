@@ -9,10 +9,7 @@ from instance_display import delayed_print
 
 
 def check_level_up(character: dict):
-    if character["level"] >= 6:
-        return False
-    else:
-        return character["exp"] > character["level"] * 10
+    return character["exp"] > character["level"] * 10
 
 
 def level_up(character):
@@ -30,7 +27,7 @@ def change_job(character):
         character["job"] = "junior developer"
     elif character_level == 5:
         character["job"] = "middle developer"
-    elif character_level == 6:
+    elif character_level >= 6:
         character["job"] = "senior developer"
     return
 
@@ -97,9 +94,10 @@ def change_level(character):
         increase_status(character)
         add_skill(character)
         character_level = str(character["level"])
-        delayed_print(f"Wow! {character['name']} has learned {character['skills'][character_level]}!")
-        change_job(character)
-        delayed_print(f"Congratulations!\nNow {character['name']} became a {character['job']}!")
+        if character["level"] <= 6:
+            delayed_print(f"Wow! {character['name']} has learned {character['skills'][character_level]}!")
+            change_job(character)
+            delayed_print(f"Congratulations!\nNow {character['name']} became a {character['job']}!")
 
 
 def calculate_grade(character):
