@@ -38,8 +38,9 @@ def determine_foe_action(foe):
 
 
 def display_action(character, action):
+    if not action == "skill":
 
-    return delayed_print(f"{character['name']}'s turn!\n{character['name']} does {action}!!")
+        return delayed_print(f"{character['name']}'s turn!\n{character['name']} does {action}!!")
 
 
 def determine_player_attack_type():
@@ -67,7 +68,7 @@ def display_skills(character):
             return
         skill_listing += f"{number}: {skill}\n"
     back_to_menu = str(len(character["skills"].keys()) + 1)
-    skill_listing += f"{back_to_menu}: back to select action\n"
+    skill_listing += f"{back_to_menu}: back to select action"
     return print(skill_listing)
 
 
