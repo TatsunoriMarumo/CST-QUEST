@@ -63,6 +63,7 @@ def game():
             delayed_print(f"Congratuations!!\n {character['name']} has cleared the game!!\n"
                           f"{character['name']}'s final grade was '{final_grade}'"
                           f"Thank you for playing!")
+            break
         instance_display.display_board(game_map, character)
         instance_display.display_character_details(character)
         instance_display.display_character_stats(character)
