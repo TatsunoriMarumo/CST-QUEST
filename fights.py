@@ -25,7 +25,6 @@ def run_combat(character):
                 delayed_print(f"{character['name']} failed to run away\nFace reality...")
 
         elif player_action == "skill":
-            actions.display_skills(character)
             player_choice_skill = actions.get_user_skill_choice(character)
             if player_choice_skill == str(len(character["skills"]) + 1):
                 player_action = actions.determine_player_attack_type()
@@ -101,7 +100,6 @@ def combat_with_boss(character):
             delayed_print(f"You cannot run away from {boss['name']}!")
 
         elif player_action == "skill":
-            actions.display_skills(character)
             player_choice_skill = actions.get_user_skill_choice(character)
 
             if player_choice_skill == str(len(character["skills"]) + 1):
