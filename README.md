@@ -22,12 +22,6 @@ Ephraim: ephraimbcit
 
 ## Any important comments you'd like to make about your work:
 
-REPLACE THIS LINE WITH ANY COMMENTS
-
-Our game is not functional. Tats and I were running into a module bug that broke our whole logic, ultimately we
-tried to refactor our entire codebase and were unsuccessful. We just wanted to apologize in advance for the poor
-product.
-
 *Status*
 intelligence: represent strength
 mental_fortitude: represent defence 
